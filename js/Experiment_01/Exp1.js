@@ -43,7 +43,7 @@ var exp1 = function(p) {
       // console.log(bubbles[i].position.x);
       
       for(var j = i + 1; j < 11; j++){
-        if(dist(bubbles[i].positionX, bubbles[j].positionX, bubbles[i].positionY, bubbles[j].positionY) < connect) {
+        if(p.dist(bubbles[i].positionX, bubbles[j].positionX, bubbles[i].positionY, bubbles[j].positionY) < connect) {
           p.line(bubbles[i].positionX, bubbles[i].positionY, bubbles[j].positionX, bubbles[j].positionY);
         }
       }
@@ -55,7 +55,7 @@ var exp1 = function(p) {
     var r = 1;
     var yspeed = p.random(-1.3, 4);
     var xspeed = p.random(-1.3, 4);
-    var position = new p5.Vector(random(width), random(height));
+    var position = new p5.Vector(p.random(width), p.random(height));
     var giveLerp;
 
     // console.log(position.x);
@@ -84,19 +84,19 @@ var exp1 = function(p) {
    
     this.update = function() {
       if(!halfWayBool) {
-        position.y += yspeed * 0.3 * random(0, 1) * 50;
-        position.x += xspeed * 0.3 * random(0, 1) * 100;
+        position.y += yspeed * 0.3 * p.random(0, 1) * 50;
+        position.x += xspeed * 0.3 * p.random(0, 1) * 100;
       }
       
       if(position.y > height || position.y < 0) {
         yspeed *= -1;
-      } else if(position.x > width || position.x < 0) {
+      } else if(position.x > p.width || position.x < 0) {
         xspeed *= -1;
       }
       
       if(lerpBool || halfWayBool) {
         interPola += 0.0001;
-        interPola = constrain(interPola, 0, 1);
+        interPola = p.constrain(interPola, 0, 1);
       }
     }
     
