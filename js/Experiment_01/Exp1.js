@@ -23,7 +23,7 @@ var exp1 = function(p) {
     p.frameRate(30);
       
     for(var i = 0; i < 12; i++) {
-      p.bubbles[i] = new Bubble();
+      p.bubbles[i] = new p.Bubble();
     }
 
     // println("setup!");
