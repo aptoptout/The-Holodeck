@@ -53,9 +53,9 @@ var exp1 = function(p) {
   p.Bubble = function() {
     var c;
     var r = 1;
-    var yspeed = random(-1.3, 4);
-    var xspeed = random(-1.3, 4);
-    var position = new p5.Vector(random(width), random(height));
+    var yspeed = p.random(-1.3, 4);
+    var xspeed = p.random(-1.3, 4);
+    var position = new p.p5.Vector(random(width), random(height));
     var giveLerp;
 
     // console.log(position.x);
