@@ -1,5 +1,5 @@
 var exp1 = function(p) {
-  var bubbles = [];
+  var bubbles = new p.Array(400);
 
   var total = 16;
   var connect = 0;
