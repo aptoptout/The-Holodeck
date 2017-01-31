@@ -1,7 +1,7 @@
 var exp1 = function(p) {
   var bubbles = [];
 
-  // var total = 400;
+  var total = 12;
   var connect = 200;
   var tran = 10;
 
@@ -26,7 +26,7 @@ var exp1 = function(p) {
     p.createCanvas(elementWidth, elementHeight);
     p.frameRate(30);
       
-    for(var i = 0; i < 12; i++) {
+    for(var i = 0; i < 20; i++) {
       bubbles[i] = new p.Bubble();
     }
 
@@ -40,14 +40,14 @@ var exp1 = function(p) {
     // rect(0,0,width,height);
     p.background(0);
 
-    for(var i = 0; i < 12; i++){  
+    for(var i = 0; i < total; i++){  
       bubbles[i].update(); 
       bubbles[i].display();
 
       // console.log(bubbles[i].position.x);
       
-      for(var j = i + 1; j < 11; j++){
-        if(p.dist(bubbles[i].positionX, bubbles[j].positionX, bubbles[i].positionY, bubbles[j].positionY) < connect) {
+      for(var j = i + 1; j < total; j++){
+        if(p.dist(bubbles[i].positionX, bubbles[i].positionX, bubbles[j].positionY, bubbles[j].positionY) < connect + 200) {
           p.line(bubbles[i].positionX, bubbles[i].positionY, bubbles[j].positionX, bubbles[j].positionY);
         }
       }
