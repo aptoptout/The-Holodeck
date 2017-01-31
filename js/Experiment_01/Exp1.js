@@ -37,8 +37,8 @@ var exp1 = function(p) {
     p.background(0);
 
     for(var i = 0; i < 12; i++){  
-      p.bubbles[i].update(); 
-      p.bubbles[i].display();
+      bubbles[i].update(); 
+      bubbles[i].display();
 
       // console.log(bubbles[i].position.x);
       
