@@ -88,7 +88,7 @@ var exp1 = function(p) {
         position.x += xspeed * 0.3 * p.random(0, 1) * 100;
       }
       
-      if(position.y > height || position.y < 0) {
+      if(position.y > p.height || position.y < 0) {
         yspeed *= -1;
       } else if(position.x > p.width || position.x < 0) {
         xspeed *= -1;
