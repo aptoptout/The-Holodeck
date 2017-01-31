@@ -29,25 +29,18 @@ var exp1 = function(p) {
     for(var i = 0; i < 20; i++) {
       bubbles[i] = new p.Bubble();
     }
-
-    // println("setup!");
   }
 
   p.draw = function() {
-    // console.log("draw!");
-    // fill(0, 64);
-    // noStroke();
-    // rect(0,0,width,height);
     p.background(0);
 
     for(var i = 0; i < total; i++){  
       bubbles[i].update(); 
       bubbles[i].display();
-
-      // console.log(bubbles[i].position.x);
       
-      for(var j = i + 1; j < total; j++){
+      for(var j = i + 1; j < total-1; j++){
         if(p.dist(bubbles[i].positionX, bubbles[i].positionX, bubbles[j].positionY, bubbles[j].positionY) < connect + 50) {
+          console.log("draw line!");
           p.stroke(255);
           p.strokeWeight(2);
           p.line(bubbles[i].positionX, bubbles[i].positionY, bubbles[j].positionX, bubbles[j].positionY);
@@ -73,8 +66,6 @@ var exp1 = function(p) {
       p.noFill();
 
       p.ellipse(position.x, position.y, r, r);
-      // stroke(255);
-      // strokeWeight(4.75);
     }
    
     this.update = function() {
