@@ -25,7 +25,7 @@ var exp1 = function(p) {
   p.setup = function() {
     p.createCanvas(elementWidth, elementHeight);
     p.frameRate(30);
-      §
+    
     for(var i = 0; i < total; i++) {
       bubbles[i] = new p.Bubble();
     }
