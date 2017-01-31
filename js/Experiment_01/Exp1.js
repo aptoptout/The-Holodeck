@@ -55,7 +55,7 @@ var exp1 = function(p) {
     var r = 1;
     var yspeed = p.random(-1.3, 4);
     var xspeed = p.random(-1.3, 4);
-    var position = new p.p5.Vector(random(width), random(height));
+    var position = new p5.Vector(random(width), random(height));
     var giveLerp;
 
     // console.log(position.x);
