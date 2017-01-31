@@ -19,7 +19,7 @@ var exp1 = function(p) {
   var halfWaySpeed = 0.05;
 
   var _element = document.getElementById("c1");
-  var elementWidth = _element.offsetWidth();
+  var elementWidth = _element.offsetWidth;
   var elementHeight = elementWidth / 1.25;
 
   p.setup = function() {
