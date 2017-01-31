@@ -18,8 +18,11 @@ var exp1 = function(p) {
   var halfWayOffset;
   var halfWaySpeed = 0.05;
 
+  var elementWidth = document.getElementById('c1').width();
+  var elementHeight = elementWidth/1.25;
+
   p.setup = function() {
-    p.createCanvas(800, 640);
+    p.createCanvas(elementWidth, elementHeight);
     p.frameRate(30);
       
     for(var i = 0; i < 12; i++) {
