@@ -47,7 +47,7 @@ var exp1 = function(p) {
       // console.log(bubbles[i].position.x);
       
       for(var j = i + 1; j < total; j++){
-        if(p.dist(bubbles[i].positionX, bubbles[i].positionX, bubbles[j].positionY, bubbles[j].positionY) < connect + 500) {
+        if(p.dist(bubbles[i].positionX, bubbles[i].positionX, bubbles[j].positionY, bubbles[j].positionY) < connect + 50) {
           p.stroke(255);
           p.strokeWeight(2);
           p.line(bubbles[i].positionX, bubbles[i].positionY, bubbles[j].positionX, bubbles[j].positionY);
@@ -58,22 +58,11 @@ var exp1 = function(p) {
 
   p.Bubble = function() {
     var c;
-    var r = 1;
+    var r = 2;
     var yspeed = p.random(-1.3, 4);
     var xspeed = p.random(-1.3, 4);
     var position = new p5.Vector(p.random(p.width), p.random(p.height));
     var giveLerp;
-
-    // console.log(position.x);
-    
-    // this.Bubble = function() {
-    //   position = new p5.Vector(random(width), random(height));
-
-    //   r = 1;
-      
-    //   yspeed = random(-1.3, 4);
-    //   xspeed = random(-1.3, 4);
-    // }
 
     this.positionX = position.x;
     this.positionY = position.y;
@@ -89,35 +78,17 @@ var exp1 = function(p) {
     }
    
     this.update = function() {
-      if(!halfWayBool) {
-        position.y += yspeed * 0.3 * p.random(0, 1) * 50;
-        position.x += xspeed * 0.3 * p.random(0, 1) * 100;
-      }
+      position.y += yspeed * p.random(0, 1);
+      position.x += xspeed * p.random(0, 1);
       
       if(position.y > p.height || position.y < 0) {
         yspeed *= -1;
       } else if(position.x > p.width || position.x < 0) {
         xspeed *= -1;
       }
-      
-      if(lerpBool || halfWayBool) {
-        interPola += 0.0001;
-        interPola = p.constrain(interPola, 0, 1);
-      }
+
     }
     
-    var gLerp = function(_p) {
-      giveLerp = new p5.Vector.lerp(position, _p, interPola);
-      return giveLerp;
-    }
-
-    // this.keyPressed() {
-    //   if (key == '.') {   //distance = +200
-    //     xspeed += +50;
-    //   } else if (key == ',') {   //distance = +200
-    //     xspeed += -50;
-    //   }
-    // }
   }
 }
 
