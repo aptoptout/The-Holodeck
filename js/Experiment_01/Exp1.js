@@ -40,6 +40,7 @@ var exp1 = function(p) {
       
       for(var j = i + 1; j < total; j++){
         if(p.dist(bubbles[i].positionX, bubbles[i].positionX, bubbles[j].positionY, bubbles[j].positionY) < 5) {
+          console.log(p.dist(bubbles[i].positionX, bubbles[i].positionX, bubbles[j].positionY, bubbles[j].positionY));
           p.stroke(255);
           p.strokeWeight(1);
           p.line(bubbles[i].positionX, bubbles[i].positionY, bubbles[j].positionX, bubbles[j].positionY);

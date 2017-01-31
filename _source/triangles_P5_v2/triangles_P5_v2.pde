@@ -1,13 +1,7 @@
-import ddf.minim.*;
- 
-Minim minim;
-AudioInput input;
-AudioPlayer song;
-
 Bubble[]bubbles = new Bubble[400];
 
 int total = 12;
-int connect = 200;
+int connect = 0;
 int tran = 10;
 
 PVector mappedSquareTop, mappedSquareRight, mappedSquareBottom, mappedSquareLeft;
@@ -20,7 +14,7 @@ float halfWayOffset;
 float halfWaySpeed = 0.05;
 
 void setup(){
-  size(displayWidth, displayHeight, P3D);
+  size(350, 200, P3D);
   noCursor();
   smooth(8);
 
@@ -37,7 +31,8 @@ void draw() {
     bubbles[i].display();
     
     for(int j = i + 1; j <= total; j++){
-      if(dist(bubbles[j].position.x, bubbles[j].position.y, bubbles[i].position.x, bubbles[i].position.y) < connect + 200) {
+      if(dist(bubbles[j].position.x, bubbles[j].position.y, bubbles[i].position.x, bubbles[i].position.y) 
+      < connect + 50) {
         line(bubbles[i].position.x, bubbles[i].position.y, bubbles[j].position.x, bubbles[j].position.y);
       }
     }
@@ -46,9 +41,9 @@ void draw() {
 
 class Bubble{
   color c;
-  float r = 1;
-  float yspeed = random(-1.3, 4);
-  float xspeed = random(-1.3, 4);
+  float r = 2;
+  float yspeed = random(1, 1.5);
+  float xspeed = random(1, 1.5);
   PVector position = new PVector(random(width), random(height));
   PVector giveLerp;
   
@@ -66,8 +61,8 @@ class Bubble{
  
   void update() {
     if(!halfWayBool) {
-      position.y += yspeed * 0.3 * random(0, 1) * 50;
-      position.x += xspeed * 0.3 * random(0, 1) * 100;
+      position.y += yspeed * random(0, 1);
+      position.x += xspeed * random(0, 1);
     }
     
     if(position.y > height || position.y < 0) {
