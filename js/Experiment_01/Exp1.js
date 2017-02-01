@@ -92,9 +92,9 @@ var exp1 = function(p) {
       this.position.add(this.acceleration);
 
       if(this.position.y > p.height || this.position.y < 0) {
-        this.yspeed *= -1;
+        this.acceleration *= -1;
       } else if(this.position.x > p.width || this.position.x < 0) {
-        this.xspeed *= -1;
+        this.acceleration *= -1;
       }
     };
   };
@@ -111,7 +111,7 @@ var exp1 = function(p) {
     this.calculateAttraction = function(_m) {
       var force = p5.Vector.sub(this.position, _m.position);
       var distance = force.mag();
-      distance = p.constrain(distance, 3, 10);
+      distance = p.constrain(distance, 3, 5);
       force.normalize();
       var strength = (1 * this.mass * _m.mass) / (distance * distance);
       force.mult(strength);
