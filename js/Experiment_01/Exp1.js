@@ -44,7 +44,6 @@ var exp1 = function(p) {
       if(p.mouseIsPressed && (p.mouseX < p.width) && (p.mouseX > 0) && (p.mouseY < p.height) && (p.mouseY > 0)) {
         bubbles[i].attractThis(_Force);
       } else {
-        attractor.attractorUpdate().force;
         bubbles[i].update(); 
       }
 
@@ -110,12 +109,13 @@ var exp1 = function(p) {
     }
 
     this.calculateAttraction = function(_m) {
-      this.force = p5.Vector.sub(this.position, _m.position);
+      var force = p5.Vector.sub(this.position, _m.position);
       var distance = force.mag();
       distance = p.constrain(distance, 3, 15);
+      var force.normalize();
       var strength = (1 * this.mass * _m.mass) / (distance * distance);
-      this.force.mult(strength);
-      return this.force;
+      force.mult(strength);
+      return force;
     };
   };
 };
