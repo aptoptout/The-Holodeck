@@ -64,7 +64,7 @@ var exp1 = function(p) {
     this.yspeed = p.random(-1.3, 4);
     this.xspeed = p.random(-1.3, 4);
     this.position = p.createVector(p.random(p.width), p.random(p.height));
-    this.acceleration = createVector(0, 0);
+    this.acceleration = p.createVector(0, 0);
     
     this.display = function() {
       p.stroke(255, 255);
