@@ -23,7 +23,7 @@ var exp1 = function(p) {
   var elementWidth = _element.offsetWidth;
   var elementHeight = elementWidth / 1.25;
 
-  var mPressed = false;
+  var mPressed = true;
 
   p.setup = function() {
     p.createCanvas(elementWidth, elementHeight);
@@ -44,9 +44,10 @@ var exp1 = function(p) {
 
       if(mPressed) {
         bubbles[i].attractThis(_Force);
-      } else {
-        bubbles[i].update(); 
       }
+      // } else {
+        // bubbles[i].update(); 
+      // }
 
       bubbles[i].display();
       
@@ -60,9 +61,9 @@ var exp1 = function(p) {
     }
   };
 
-  p.mouseMoved = function() {
-    mPressed = !mPressed;
-  };
+  // p.mouseMoved = function() {
+  //   mPressed = !mPressed;
+  // };
 
   var Bubble = function() {
     this.c;
@@ -96,6 +97,12 @@ var exp1 = function(p) {
       this.acceleration.add(f);
 
       this.position.add(this.acceleration);
+
+      if(this.position.y > p.height || this.position.y < 0) {
+        this.yspeed *= -1;
+      } else if(this.position.x > p.width || this.position.x < 0) {
+        this.xspeed *= -1;
+      }
     };
   };
 
