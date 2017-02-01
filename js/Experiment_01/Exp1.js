@@ -39,7 +39,7 @@ var exp1 = function(p) {
       bubbles[i].display();
       
       for(var j = i + 1; j < total; j++){
-        if(dist(bubbles[j].position.x, bubbles[j].position.y, bubbles[i].position.x, bubbles[i].position.y) < connect + 50) {
+        if(p.dist(bubbles[j].position.x, bubbles[j].position.y, bubbles[i].position.x, bubbles[i].position.y) < connect + 50) {
           p.stroke(255);
           p.strokeWeight(1);
           p.line(bubbles[i].position.x, bubbles[i].position.y, bubbles[j].position.x, bubbles[j].position.y);
