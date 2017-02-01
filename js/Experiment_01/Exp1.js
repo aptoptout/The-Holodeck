@@ -41,8 +41,8 @@ var exp1 = function(p) {
 
     for(var i = 0; i < total; i++){
       var _Force = attractor.calculateAttraction(bubbles[i]);
-      console.log(_Force);
-      console.log(p.mouseX, p.mouseY);
+      // console.log(_Force);
+      // console.log(p.mouseX, p.mouseY);
 
       // if(mPressed) {
         bubbles[i].attractThis(_Force);
@@ -114,8 +114,8 @@ var exp1 = function(p) {
     this.calculateAttraction = function(_m) {
       var force = p5.Vector.sub(this.position, _m.position);
       var distance = force.mag();
-      distance = p.constrain(distance, 5, 25);
-      var strength = (1 * 1 * 2) / (distance / distance);
+      // distance = p.constrain(distance, 5, 25);
+      var strength = (1 * 1 * 1) / (distance * distance);
       force.mult(strength);
       return force;
     };
