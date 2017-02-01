@@ -23,7 +23,7 @@ var exp1 = function(p) {
   var elementWidth = _element.offsetWidth;
   var elementHeight = elementWidth / 1.25;
 
-  var mPressed = true;
+  // var mPressed = true;
 
   p.setup = function() {
     p.createCanvas(elementWidth, elementHeight);
@@ -42,9 +42,8 @@ var exp1 = function(p) {
     for(var i = 0; i < total; i++){
       var _Force = attractor.calculateAttraction(bubbles[i]);
 
-      if(mPressed) {
+      // if(mPressed) {
         bubbles[i].attractThis(_Force);
-      }
       // } else {
         // bubbles[i].update(); 
       // }
@@ -93,7 +92,7 @@ var exp1 = function(p) {
     };
 
     this.attractThis = function(_F) {
-      var f = p5.Vector.div(_F, 2);
+      var f = p5.Vector.div(_F, 1);
       this.acceleration.add(f);
 
       this.position.add(this.acceleration);
