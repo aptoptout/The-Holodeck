@@ -41,6 +41,8 @@ var exp1 = function(p) {
 
     for(var i = 0; i < total; i++){
       var _Force = attractor.calculateAttraction(bubbles[i]);
+      console.log(_Force);
+      console.log(p.mouseX, p.mouseY);
 
       // if(mPressed) {
         bubbles[i].attractThis(_Force);
