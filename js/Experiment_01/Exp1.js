@@ -39,7 +39,7 @@ var exp1 = function(p) {
   p.draw = function() {
     p.background(0);
     attractor.attractorUpdate();
-    
+
     for(var i = 0; i < total; i++){
       var _Force = attractor.calculateAttraction(bubbles[i]);
       // console.log(_Force);
@@ -121,7 +121,7 @@ var exp1 = function(p) {
       var force = p5.Vector.sub(this.position, _m.position);
       var distance = force.mag();
       distance = p.constrain(distance, 5, 25);
-      var strength = (1 * 1 * 2) / (distance * distance);
+      var strength = (1 * 20 * 1) / (distance * distance);
       force.mult(strength);
       return force;
     };
