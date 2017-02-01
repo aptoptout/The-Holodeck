@@ -23,7 +23,7 @@ var exp1 = function(p) {
   var elementHeight = elementWidth / 1.25;
 
   p.setup = function() {
-    p.createCanvas(800, 640);
+    p.createCanvas(elementWidth, elementHeight);
     p.frameRate(30);
     
     for(var i = 0; i < total; i++) {
@@ -41,7 +41,7 @@ var exp1 = function(p) {
       for(var j = i + 1; j < total; j++){
         var distance = p.dist(bubbles[i].position, bubbles[j].position);
 
-        if(distance < 1) {
+        if(distance < 50) {
           // console.log(p.dist(bubbles[i].positionX, bubbles[i].positionX, bubbles[j].positionY, bubbles[j].positionY));
           p.stroke(255);
           p.strokeWeight(1);
