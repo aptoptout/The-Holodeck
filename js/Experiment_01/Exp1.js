@@ -68,8 +68,8 @@ var exp1 = function(p) {
     }
    
     this.update = function() {
-      this.position.y += yspeed * p.random(0, 1);
-      this.position.x += xspeed * p.random(0, 1);
+      this.position.y += this.yspeed * p.random(0, 1);
+      this.position.x += this.xspeed * p.random(0, 1);
       
       if(this.position.y > p.height || this.position.y < 0) {
         this.yspeed *= -1;
