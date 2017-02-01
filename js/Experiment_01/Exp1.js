@@ -120,7 +120,7 @@ var exp1 = function(p) {
     this.calculateAttraction = function(_m) {
       var force = p5.Vector.sub(this.position, _m.position);
       var distance = force.mag();
-      distance = p.constrain(distance, 5, 25);
+      distance = p.constrain(distance, 2, 25);
       var strength = (1 * 200 * 1) / (distance * distance);
       force.mult(strength);
       return force;
