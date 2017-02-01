@@ -2,7 +2,7 @@ var exp1 = function(p) {
   var bubbles = new Array(400);
   var attractor;
 
-  var total = 16;
+  var total = 25;
   var connect = 50;
   var tran = 10;
 
@@ -60,7 +60,7 @@ var exp1 = function(p) {
   };
 
   var Bubble = function() {
-    this.c;
+    this.mass = p.random(0.2, 3);
     this.r = 2;
     this.yspeed = p.random(-1.3, 4);
     this.xspeed = p.random(-1.3, 4);
@@ -76,8 +76,8 @@ var exp1 = function(p) {
     };
    
     this.update = function() {
-      this.position.y += this.yspeed * p.random(0, 1);
-      this.position.x += this.xspeed * p.random(0, 1);
+      this.position.y += this.yspeed * mass;
+      this.position.x += this.xspeed * mass;
       
       if(this.position.y > p.height || this.position.y < 0) {
         this.yspeed *= -1;
@@ -101,6 +101,7 @@ var exp1 = function(p) {
   };
 
   var Attractor = function() {
+    this.mass = 20;
     this.position = p.createVector(p.width/2, p.height/2);
     this.dragOffset = p.createVector(0, 0);
 
@@ -112,8 +113,8 @@ var exp1 = function(p) {
     this.calculateAttraction = function(_m) {
       var force = p5.Vector.sub(this.position, _m.position);
       var distance = force.mag();
-      distance = p.constrain(distance, 5, 25);
-      var strength = (1 * 2 * 0.1) / (distance * distance);
+      distance = p.constrain(distance, 3, 30);
+      var strength = (1 * this.mass * _m.mass) / (distance * distance);
       force.mult(strength);
       return force;
     };
