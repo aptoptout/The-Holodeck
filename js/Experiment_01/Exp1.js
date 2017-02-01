@@ -2,7 +2,7 @@ var exp1 = function(p) {
   var bubbles = new Array(400);
 
   var total = 16;
-  var connect = 0;
+  var connect = 50;
   var tran = 10;
 
   var mappedSquareTop;
@@ -39,10 +39,7 @@ var exp1 = function(p) {
       bubbles[i].display();
       
       for(var j = i + 1; j < total; j++){
-        var distance = p.dist(bubbles[i].position, bubbles[j].position);
-
-        if(distance < 50) {
-          // console.log(p.dist(bubbles[i].positionX, bubbles[i].positionX, bubbles[j].positionY, bubbles[j].positionY));
+        if(dist(bubbles[j].position.x, bubbles[j].position.y, bubbles[i].position.x, bubbles[i].position.y) < connect + 50) {
           p.stroke(255);
           p.strokeWeight(1);
           p.line(bubbles[i].position.x, bubbles[i].position.y, bubbles[j].position.x, bubbles[j].position.y);
