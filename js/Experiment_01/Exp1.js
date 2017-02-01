@@ -121,7 +121,7 @@ var exp1 = function(p) {
       var force = p5.Vector.sub(this.position, _m.position);
       var distance = force.mag();
       distance = p.constrain(distance, 5, 25);
-      var strength = (1 * 20 * 1) / (distance * distance);
+      var strength = (1 * 200 * 1) / (distance * distance);
       force.mult(strength);
       return force;
     };
