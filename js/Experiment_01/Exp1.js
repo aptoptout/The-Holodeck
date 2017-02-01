@@ -87,7 +87,7 @@ var exp1 = function(p) {
     };
 
     this.attractThis = function(_F) {
-      var f = p5.Vector.div(_F, 1);
+      var f = p5.Vector.div(_F, this.mass);
       this.acceleration.add(f);
       this.position.add(this.acceleration);
 
