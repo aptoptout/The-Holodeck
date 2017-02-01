@@ -64,7 +64,7 @@ var exp1 = function(p) {
       p.strokeWeight(2);
       p.noFill();
 
-      p.ellipse(this.position.x, this.position.y, r, r);
+      p.ellipse(this.position.x, this.position.y, this.r, this.r);
     }
    
     this.update = function() {
