@@ -76,8 +76,8 @@ var exp1 = function(p) {
     };
    
     this.update = function() {
-      this.position.y += this.yspeed * mass;
-      this.position.x += this.xspeed * mass;
+      this.position.y += this.yspeed * this.mass;
+      this.position.x += this.xspeed * this.mass;
       
       if(this.position.y > p.height || this.position.y < 0) {
         this.yspeed *= -1;
