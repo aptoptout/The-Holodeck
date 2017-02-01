@@ -91,10 +91,15 @@ var exp1 = function(p) {
       this.acceleration.add(f);
       this.position.add(this.acceleration);
 
-      if(this.position.y > p.height || this.position.y < 0) {
-        this.acceleration *= -1;
-      } else if(this.position.x > p.width || this.position.x < 0) {
-        this.acceleration *= -1;
+      if(this.position.y > p.height) {
+        this.position.y = p.height;
+        this.acceleration.y *= -1;
+      } else if(this.position.x > p.width) {
+        this.position.x = p.width;
+        this.acceleration.x *= -1;
+      } else if(this.position.x < 0) {
+        this.acceleration.x *= -1;
+        this.position.x = 0;
       }
     };
   };
