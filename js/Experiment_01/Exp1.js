@@ -23,7 +23,7 @@ var exp1 = function(p) {
   var elementHeight = elementWidth / 1.25;
 
   p.setup = function() {
-    p.createCanvas(elementWidth, elementHeight);
+    p.createCanvas(800, 640);
     p.frameRate(30);
     
     for(var i = 0; i < total; i++) {
@@ -39,45 +39,48 @@ var exp1 = function(p) {
       bubbles[i].display();
       
       for(var j = i + 1; j < total; j++){
-        if(p.dist(bubbles[i].positionX, bubbles[i].positionX, bubbles[j].positionY, bubbles[j].positionY) < 1) {
+        var distance = p.dist(bubbles[i].position, bubbles[j].position);
+
+        if(distance < 1) {
           // console.log(p.dist(bubbles[i].positionX, bubbles[i].positionX, bubbles[j].positionY, bubbles[j].positionY));
           p.stroke(255);
           p.strokeWeight(1);
-          p.line(bubbles[i].positionX, bubbles[i].positionY, bubbles[j].positionX, bubbles[j].positionY);
+          p.line(bubbles[i].position.x, bubbles[i].position.y, bubbles[j].position.x, bubbles[j].position.y);
         }
       }
     }
   }
 
   p.Bubble = function() {
-    var c;
-    var r = 2;
-    var yspeed = p.random(-1.3, 4);
-    var xspeed = p.random(-1.3, 4);
-    var position = new p5.Vector(p.random(p.width), p.random(p.height));
-    var giveLerp;
+    this.c;
+    this.r = 2;
+    this.yspeed = p.random(-1.3, 4);
+    this.xspeed = p.random(-1.3, 4);
+    this.position = p.createVector(p.random(p.width), p.random(p.height));
+    this.giveLerp;
     
     this.display = function() {
       p.stroke(255, 255);
       p.strokeWeight(2);
       p.noFill();
 
-      p.ellipse(position.x, position.y, r, r);
+      p.ellipse(this.position.x, this.position.y, r, r);
     }
    
     this.update = function() {
-      position.y += yspeed * p.random(0, 1);
-      position.x += xspeed * p.random(0, 1);
+      this.position.y += yspeed * p.random(0, 1);
+      this.position.x += xspeed * p.random(0, 1);
       
-      if(position.y > p.height || position.y < 0) {
-        yspeed *= -1;
-      } else if(position.x > p.width || position.x < 0) {
-        xspeed *= -1;
+      if(this.position.y > p.height || this.position.y < 0) {
+        this.yspeed *= -1;
+      } else if(this.position.x > p.width || this.position.x < 0) {
+        this.xspeed *= -1;
       }
-
-      this.positionX = position.x;
-      this.positionY = position.y;
     }
+
+    // this.givePosition = function() {
+    //   return this.position;
+    // }
     
   }
 }
