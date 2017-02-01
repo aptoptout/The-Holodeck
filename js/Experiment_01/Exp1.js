@@ -38,7 +38,8 @@ var exp1 = function(p) {
 
   p.draw = function() {
     p.background(0);
-
+    attractor.attractorUpdate();
+    
     for(var i = 0; i < total; i++){
       var _Force = attractor.calculateAttraction(bubbles[i]);
       // console.log(_Force);
@@ -108,14 +109,19 @@ var exp1 = function(p) {
   };
 
   var Attractor = function() {
-    this.position = p.createVector(p.mouseX, p.mouseY);
+    this.position = p.createVector(p.width/2, p.height/2);
     this.dragOffset = p.createVector(0, 0);
+
+    this.attractorUpdate = function() {
+      this.position.x = p.mouseX;
+      this.position.y = p.mouseY;
+    }
 
     this.calculateAttraction = function(_m) {
       var force = p5.Vector.sub(this.position, _m.position);
       var distance = force.mag();
-      // distance = p.constrain(distance, 5, 25);
-      var strength = (1 * 1 * 1) / (distance * distance);
+      distance = p.constrain(distance, 5, 25);
+      var strength = (1 * 1 * 2) / (distance * distance);
       force.mult(strength);
       return force;
     };
