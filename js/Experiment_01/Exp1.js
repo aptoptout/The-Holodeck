@@ -27,7 +27,7 @@ var exp1 = function(p) {
     p.frameRate(30);
     
     for(var i = 0; i < total; i++) {
-      bubbles[i] = new p.Bubble();
+      bubbles[i] = new Bubble();
     }
   }
 
@@ -51,7 +51,7 @@ var exp1 = function(p) {
     }
   }
 
-  p.Bubble = function() {
+  var Bubble = function() {
     this.c;
     this.r = 2;
     this.yspeed = p.random(-1.3, 4);
