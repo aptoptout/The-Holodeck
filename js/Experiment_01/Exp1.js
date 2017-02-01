@@ -100,7 +100,7 @@ var exp1 = function(p) {
   };
 
   var Attractor = function() {
-    this.mass = 2.5;
+    this.mass = 10;
     this.position = p.createVector(0, 0);
 
     this.attractorUpdate = function() {
@@ -111,7 +111,7 @@ var exp1 = function(p) {
     this.calculateAttraction = function(_m) {
       var force = p5.Vector.sub(this.position, _m.position);
       var distance = force.mag();
-      distance = p.constrain(distance, 3, 15);
+      distance = p.constrain(distance, 3, 10);
       force.normalize();
       var strength = (1 * this.mass * _m.mass) / (distance * distance);
       force.mult(strength);
