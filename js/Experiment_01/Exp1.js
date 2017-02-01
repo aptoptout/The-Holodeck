@@ -60,8 +60,8 @@ var exp1 = function(p) {
     }
   };
 
-  p.mousePressed = function() {
-    mPressed = true;
+  p.mouseMoved = function() {
+    mPressed = !mPressed;
   };
 
   var Bubble = function() {
