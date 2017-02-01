@@ -94,6 +94,9 @@ var exp1 = function(p) {
       if(this.position.y > p.height) {
         this.position.y = p.height;
         this.acceleration.y *= -1;
+      } else if(this.position.y < 0) {
+        this.acceleration.y *= -1;
+        this.position.y = 0;
       } else if(this.position.x > p.width) {
         this.position.x = p.width;
         this.acceleration.x *= -1;
