@@ -41,7 +41,7 @@ var exp1 = function(p) {
     for(var i = 0; i < total; i++){
       var _Force = attractor.calculateAttraction(bubbles[i]);
 
-      if(p.mouseIsPressed) {
+      if(p.mouseIsPressed && (p.mouseX < p.width) && (p.mouseX > 0) && (p.mouseY < p.height) && (p.mouseY > 0)) {
         bubbles[i].attractThis(_Force);
       } else {
         bubbles[i].update(); 
@@ -101,7 +101,7 @@ var exp1 = function(p) {
   };
 
   var Attractor = function() {
-    this.mass = 20;
+    this.mass = 5;
     this.position = p.createVector(p.width/2, p.height/2);
     this.dragOffset = p.createVector(0, 0);
 
