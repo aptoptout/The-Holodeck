@@ -44,7 +44,7 @@ var exp1 = function(p) {
       if(p.mouseIsPressed && (p.mouseX < p.width) && (p.mouseX > 0) && (p.mouseY < p.height) && (p.mouseY > 0)) {
         bubbles[i].attractThis(_Force);
       } else {
-        bubbles[i].acceleration = 0;
+        bubbles[i].acceleration = p.createVector(0, 0);
         bubbles[i].update(); 
       }
 
