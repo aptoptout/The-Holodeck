@@ -16,7 +16,7 @@ html, body {
   display: flex;
 }
 
-.canvas {
+.col {
   width: 100px;
   height: 100%;
 
@@ -24,10 +24,12 @@ html, body {
   padding: 0;
 
   left: 0;
+}
 
+.c2 {
   flex-grow: 1;
 }
 
-#c1 {
+.c4 {
   flex-grow: 4;
 }

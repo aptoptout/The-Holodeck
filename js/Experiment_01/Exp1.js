@@ -21,7 +21,7 @@ var exp1 = function(p) {
 
   var _element = document.getElementById("c1");
   var elementWidth = _element.offsetWidth;
-  var elementHeight = elementWidth / 1.25;
+  var elementHeight = window.innerHeight;
 
   p.setup = function() {
     p.createCanvas(elementWidth, elementHeight);
