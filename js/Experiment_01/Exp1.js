@@ -53,7 +53,7 @@ var exp1 = function(p) {
     for(var i = 0; i < total; i++){
       var _Force = attractor.calculateAttraction(bubbles[i]);
 
-      if(p.mouseIsPressed && (p.mouseX < p.width) && (p.mouseX > 0) && (p.mouseY < p.height) && (p.mouseY > 0)) {
+      if((p.mouseX < p.width) && (p.mouseX > 0) && (p.mouseY < p.height) && (p.mouseY > 0)) {
         bubbles[i].attractThis(_Force);
       } else {
         bubbles[i].acceleration = p.createVector(0, 0);
