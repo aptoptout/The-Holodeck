@@ -1,7 +1,7 @@
 # THE HOLODECK
 ## Laboratory of creative coding experiments
 
-Repository of creative coding experiments, specifically focused on P5js.
+Check out the repository of this laboratory — note that the experiments are specifically focused on P5js.
 
 Experiments to conduct:
 * Make a friendly environment with some basic navigational elements.
