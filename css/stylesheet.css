@@ -8,6 +8,7 @@ html, body {
   padding: 0;
 
   font-family: "Helvetica", "Arial", sans serif;
+  font-size: 10px;
   line-height: 1.5em;
 }
 
@@ -36,8 +37,11 @@ html, body {
 }
 
 .c2:nth-of-type(1) {
-  padding-left: 0.3em;
-  padding-right: 0.6em;
+  padding-top: 2em;
+  padding-left: 0.6em;
+  padding-right: 2.0em;
+
+  flex-grow: 0.5;
 }
 
 .c4 {
