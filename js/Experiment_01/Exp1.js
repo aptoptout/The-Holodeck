@@ -1,3 +1,15 @@
+// Experiment 01 — The Holodeck
+// Martijn de Heer
+// http://www.martijndeheer.nl
+
+// January 2017
+
+// Original sketch is made for COMPOSITION 01 
+// Original sketch is made by Symbiotic Spark, a collective of visual artists and musicians
+// Original sketch is made in Processing 2 by Rafael Henneberke
+// This sketch is adapted and remodeled in P5 and for the web (obviously)
+// This sketch uses the instance mode for P5 to create multiple canvases in different DIVS on the page
+
 var exp1 = function(p) {
   var bubbles = new Array(400);
   var attractor;
