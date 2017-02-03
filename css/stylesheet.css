@@ -47,6 +47,10 @@ html, body {
   flex-grow: 4;
 }
 
+#c1 {
+  overflow: hidden;
+}
+
 /* Specific typography and coloring */
 
 a, a:visited {
