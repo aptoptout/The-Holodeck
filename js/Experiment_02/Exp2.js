@@ -18,6 +18,11 @@ var exp2 = function(p) {
 
   p.draw = function() {
     p.background(0);
+    
+    p.noFill();
+    p.stroke(0);
+    p.strokeWeight(1);
+
     p.rectMode(CENTER);
     p.rect(100, 100, elementWidth/2, elementHeight/2);
   };
