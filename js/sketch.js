@@ -22,12 +22,10 @@ function showThisExperiment(event) {
 
     switch(_click) {
         case 'exp1':
-            _Exp2 = false;
-            _Exp1 = true;
+            experiment_1 = new p5(exp1, 'c1');
             break;
         case 'exp2':
-            _Exp1 = false;
-            _Exp2 = true;
+            experiment_2 = new p5(exp2, 'c1');
             break;
         default:
             return false;
@@ -37,8 +35,8 @@ function showThisExperiment(event) {
 var parent = document.getElementById('expIndex');
 parent.addEventListener('click', showThisExperiment);
 
-if(_Exp1 == true) {
-  experiment_1 = new p5(exp1, 'c1');
-} else if(_Exp2 == true) {
-  experiment_2 = new p5(exp2, 'c1');
-}
+// if(_Exp1 == true) {
+//   experiment_1 = new p5(exp1, 'c1');
+// } else if(_Exp2 == true) {
+//   experiment_2 = new p5(exp2, 'c1');
+// }
