@@ -25,10 +25,6 @@ var exp1 = function(p) {
   var lerpBool = false;
   var interPola;
 
-  var _element = document.getElementById("c1");
-  var elementWidth = _element.offsetWidth;
-  var elementHeight = _element.offsetHeight;
-
   p.setup = function() {
     p.createCanvas(elementWidth, elementHeight);
     p.frameRate(30);
@@ -134,5 +130,3 @@ var exp1 = function(p) {
     };
   };
 };
-
-var experiment_1 = new p5(exp1, 'c1');
