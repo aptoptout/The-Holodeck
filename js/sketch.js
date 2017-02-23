@@ -10,8 +10,9 @@ var _element = document.getElementById("c1");
 var elementWidth = _element.offsetWidth;
 var elementHeight = _element.offsetHeight;
 
-var experiment_1;
-var experiment_2;
+var experiments = new Array(2);
+experiments[0] = new p5(exp1, 'c1');
+experiments[1] = new p5(exp2, 'c1');
 
 function showThisExperiment(event) {
     var _click = event.target.id;
@@ -19,10 +20,10 @@ function showThisExperiment(event) {
 
     switch(_click) {
         case 'exp1':
-            experiment_1 = new p5(exp1, 'c1');
+            experiments[0];
             break;
         case 'exp2':
-            experiment_2 = new p5(exp2, 'c1');
+            experiments[1];
             break;
         default:
             return false;
