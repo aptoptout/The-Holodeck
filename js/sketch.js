@@ -16,16 +16,16 @@ function showThisExperiment(event) {
 
     switch(_click) {
         case 'exp1':
-            if(document.getElementById("canvas0")) {
-              var element = document.getElementById("canvas0");
+            if(document.getElementById("defaultCanvas0")) {
+              var element = document.getElementById("defaultCanvas0");
               element.outerHTML = "";
               delete element;
             }
             showThis = new p5(exp1, 'c1');
             break;
         case 'exp2':
-            if(document.getElementById("canvas0")) {
-              var element = document.getElementById("canvas0");
+            if(document.getElementById("defaultCanvas0")) {
+              var element = document.getElementById("defaultCanvas0");
               element.outerHTML = "";
               delete element;
             }
