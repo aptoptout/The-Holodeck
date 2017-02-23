@@ -13,22 +13,21 @@ var elementHeight = _element.offsetHeight;
 var experiment_1;
 var experiment_2;
 
-var _Exp1;
-var _Exp2;
-
 function showThisExperiment(event) {
     var _click = event.target.id;
     console.log(event.target, _click);
 
     switch(_click) {
         case 'exp1':
+            p.remove();
             experiment_1 = new p5(exp1, 'c1');
             break;
         case 'exp2':
+            p.remove();
             experiment_2 = new p5(exp2, 'c1');
             break;
         default:
-            experiment_1 = new p5(exp1, 'c1');
+            return false;
     }
 }
 
