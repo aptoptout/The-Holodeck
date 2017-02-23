@@ -11,12 +11,11 @@
 // This sketch uses the instance mode for P5 to create multiple canvases in different DIVS on the page
 
 var exp1 = function(p) {
-  var bubbles = new Array(400);
+  var bubbles = new Array(80);
   var attractor;
 
   var total = 40;
-  var connect = 50;
-  var tran = 10;
+  var connect = 75;
 
   var mappedSquareTop;
   var mappedSquareRight;
@@ -25,11 +24,6 @@ var exp1 = function(p) {
 
   var lerpBool = false;
   var interPola;
-
-  var halfwayLine;
-  var halfWayBool = false;
-  var halfWayOffset;
-  var halfWaySpeed = 0.05;
 
   var _element = document.getElementById("c1");
   var elementWidth = _element.offsetWidth;
