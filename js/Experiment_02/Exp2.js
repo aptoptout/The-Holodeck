@@ -23,8 +23,8 @@ var exp2 = function(p) {
     p.stroke(0);
     p.strokeWeight(1);
 
-    p.rectMode(CENTER);
-    p.rect(100, 100, elementWidth/2, elementHeight/2);
+    p.rectMode(p.CENTER);
+    p.rect(elementWidth/2, elementHeight/2, 100, 100);
   };
 
 };
