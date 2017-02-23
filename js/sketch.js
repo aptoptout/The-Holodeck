@@ -10,7 +10,7 @@ var _element = document.getElementById("c1");
 var elementWidth = _element.offsetWidth;
 var elementHeight = _element.offsetHeight;
 
-var experiment_1;
+var experiment_1 = new p5(exp1, 'c1');;
 var experiment_2;
 
 var _Exp1 = false;
