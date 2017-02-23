@@ -13,8 +13,8 @@ var elementHeight = _element.offsetHeight;
 var experiment_1;
 var experiment_2;
 
-var _Exp1 = false;
-var _Exp2 = false;
+var _Exp1;
+var _Exp2;
 
 function showThisExperiment(event) {
     var _click = event.target.id;
@@ -22,9 +22,11 @@ function showThisExperiment(event) {
 
     switch(_click) {
         case 'exp1':
+            _Exp2 = false;
             _Exp1 = true;
             break;
         case 'exp2':
+            _Exp1 = false;
             _Exp2 = true;
             break;
         default:
