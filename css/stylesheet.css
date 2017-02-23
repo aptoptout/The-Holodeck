@@ -41,6 +41,8 @@ html, body {
   padding-right: 2.0em;
 
   flex-grow: 0.5;
+
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .c4 {

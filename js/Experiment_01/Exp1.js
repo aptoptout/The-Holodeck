@@ -65,7 +65,7 @@ var exp1 = function(p) {
       for(var j = i + 1; j < total; j++){
         if(p.dist(bubbles[j].position.x, bubbles[j].position.y, bubbles[i].position.x, bubbles[i].position.y) < connect) {
           p.stroke(255, 128);
-          p.strokeWeight(1);
+          p.strokeWeight(2);
           p.line(bubbles[i].position.x, bubbles[i].position.y, bubbles[j].position.x, bubbles[j].position.y);
         }
       }
@@ -74,7 +74,7 @@ var exp1 = function(p) {
 
   var Bubble = function() {
     this.mass = p.random(0.2, 3);
-    this.r = 2;
+    this.r = 1;
     this.yspeed = p.random(-1.3, 4);
     this.xspeed = p.random(-1.3, 4);
     this.position = p.createVector(p.random(p.width), p.random(p.height));
@@ -85,7 +85,7 @@ var exp1 = function(p) {
       p.strokeWeight(4);
       p.noFill();
 
-      p.ellipse(this.position.x, this.position.y, this.r, this.r);
+      p.point(this.position.x, this.position.y);
     };
    
     this.update = function() {
