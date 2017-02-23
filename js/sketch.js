@@ -19,11 +19,11 @@ function showThisExperiment(event) {
 
     switch(_click) {
         case 'exp1':
-            remove();
+            p5.remove();
             experiment_1 = new p5(exp1, 'c1');
             break;
         case 'exp2':
-            remove();
+            p5.remove();
             experiment_2 = new p5(exp2, 'c1');
             break;
         default:
