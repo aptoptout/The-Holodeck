@@ -14,7 +14,7 @@ var exp1 = function(p) {
   var bubbles = new Array(400);
   var attractor;
 
-  var total = 25;
+  var total = 40;
   var connect = 50;
   var tran = 10;
 
@@ -81,7 +81,7 @@ var exp1 = function(p) {
     this.acceleration = p.createVector(0, 0);
     
     this.display = function() {
-      p.stroke(255, 255);
+      p.stroke(255, 128);
       p.strokeWeight(2);
       p.noFill();
 
@@ -140,7 +140,5 @@ var exp1 = function(p) {
     };
   };
 };
-
-
 
 var experiment_1 = new p5(exp1, 'c1');

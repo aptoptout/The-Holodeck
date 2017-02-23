@@ -36,7 +36,7 @@ html, body {
 }
 
 .c2:nth-of-type(1) {
-  padding-top: 2em;
+  padding-top: 0.5em;
   padding-left: 0.6em;
   padding-right: 2.0em;
 
@@ -63,6 +63,9 @@ a:hover {
 
 h1 {
   margin-top: 0.3em;
+  margin-bottom: 2em;
+
+  line-height: 1.2em;
 }
 
 p {
