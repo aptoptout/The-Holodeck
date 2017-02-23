@@ -129,4 +129,9 @@ var exp1 = function(p) {
       return force;
     };
   };
+
+  function p.mousePressed() {
+    p.remove();
+  }
 };
+

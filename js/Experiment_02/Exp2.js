@@ -27,4 +27,8 @@ var exp2 = function(p) {
     p.rect(elementWidth/2, elementHeight/2, 100, 100);
   };
 
+  function p.mousePressed() {
+    p.remove();
+  }
+
 };
