@@ -14,7 +14,6 @@ var showThis;
 
 function showThisExperiment(event) {
     var _click = event.target.id;
-    console.log(event.target, _click);
 
     switch(_click) {
         case 'exp1':
