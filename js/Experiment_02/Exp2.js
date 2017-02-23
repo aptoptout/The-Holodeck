@@ -20,7 +20,7 @@ var exp2 = function(p) {
     p.background(0);
     
     p.noFill();
-    p.stroke(0);
+    p.stroke(255);
     p.strokeWeight(1);
 
     p.rectMode(p.CENTER);
