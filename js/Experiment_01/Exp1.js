@@ -64,7 +64,7 @@ var exp1 = function(p) {
       
       for(var j = i + 1; j < total; j++){
         if(p.dist(bubbles[j].position.x, bubbles[j].position.y, bubbles[i].position.x, bubbles[i].position.y) < connect + 50) {
-          p.stroke(255);
+          p.stroke(255, 128);
           p.strokeWeight(1);
           p.line(bubbles[i].position.x, bubbles[i].position.y, bubbles[j].position.x, bubbles[j].position.y);
         }
@@ -81,8 +81,8 @@ var exp1 = function(p) {
     this.acceleration = p.createVector(0, 0);
     
     this.display = function() {
-      p.stroke(255, 128);
-      p.strokeWeight(2);
+      p.stroke(255, 170);
+      p.strokeWeight(4);
       p.noFill();
 
       p.ellipse(this.position.x, this.position.y, this.r, this.r);
