@@ -14,7 +14,7 @@ var exp1 = function(p) {
   var bubbles = new Array(80);
   var attractor;
 
-  var total = 40;
+  var total = 80;
   var connect = 75;
 
   var mappedSquareTop;
