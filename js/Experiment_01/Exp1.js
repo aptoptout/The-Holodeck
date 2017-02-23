@@ -130,7 +130,7 @@ var exp1 = function(p) {
     };
   };
 
-  function p.mousePressed() {
+  function mousePressed() {
     p.remove();
   }
 };
