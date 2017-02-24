@@ -11,9 +11,23 @@ var elementHeight = _element.offsetHeight;
 
 var showThis = new p5(exp1, 'c1');
 
+function getChildren(n, skipMe){
+  var r = [];
+  for ( ; n; n = n.nextSibling ) 
+     if ( n.nodeType == 1 && n != skipMe)
+        r.push( n );        
+  return r;
+};
+
+function getSiblings(n) {
+  return getChildren(n.parentNode.firstChild, n);
+}
+
 function showThisExperiment(event) {
     var _click = event.target.id;
     event.target.classList.toggle("activeEl");
+
+    console.log(getSiblings(event.target));
 
     if(document.getElementById("defaultCanvas0")) {
       var element = document.getElementById("defaultCanvas0");
