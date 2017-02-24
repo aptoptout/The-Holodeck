@@ -1,8 +1,8 @@
-# THE HOLODECK
+# [THE HOLODECK](https://martijndeheer.github.io/The-Holodeck/)
 ## Laboratory of creative coding experiments
 
 Check out the repository of this laboratory — note that the experiments are specifically focused on P5js.
-All the experiments are [here] https://github.com/martijndeheer/The-Holodeck/tree/gh-pages/js
+All the experiments are [here](https://github.com/martijndeheer/The-Holodeck/tree/gh-pages/js)
 
 ### Experiments to conduct:
 - [x] Make a friendly environment with some basic navigational elements.
