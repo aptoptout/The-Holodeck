@@ -13,7 +13,7 @@ var showThis = new p5(exp1, 'c1');
 
 function removeActiveClass(n){
   if(n.classList.contains("activeEl")){
-    n.classList.remove("foo");
+    n.classList.remove("activeEl");
   } else {
     return;
   }
