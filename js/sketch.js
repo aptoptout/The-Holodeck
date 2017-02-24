@@ -11,11 +11,20 @@ var elementHeight = _element.offsetHeight;
 
 var showThis = new p5(exp1, 'c1');
 
+function removeActiveClass(n){
+  if(n.classList.contains("activeEl")){
+    n.classList.remove("foo");
+  } else {
+    return;
+  }
+}
+
 function getChildren(n, skipMe){
   var r = [];
   for ( ; n; n = n.nextSibling ) 
      if ( n.nodeType == 1 && n != skipMe)
-        r.push( n );        
+        removeActiveClass(n)
+        r.push( n );
   return r;
 };
 
@@ -27,7 +36,7 @@ function showThisExperiment(event) {
     var _click = event.target.id;
     event.target.classList.toggle("activeEl");
 
-    console.log(getSiblings(event.target));
+    getSiblings(event.target);
 
     if(document.getElementById("defaultCanvas0")) {
       var element = document.getElementById("defaultCanvas0");
