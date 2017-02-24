@@ -13,7 +13,7 @@ var showThis = new p5(exp1, 'c1');
 
 function showThisExperiment(event) {
     var _click = event.target.id;
-    event.target.className += " activeEl";
+    event.target.classList.toggle("activeEl");
 
     if(document.getElementById("defaultCanvas0")) {
       var element = document.getElementById("defaultCanvas0");
