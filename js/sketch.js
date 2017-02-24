@@ -4,7 +4,10 @@
 
 // February 2017
 
-// This file links all the different 'sketches' (Exp1.js etc.) to load multiple in the same or different DIVs.
+// This file links all the different 'sketches' (Exp1.js etc.) 
+// to load multiple in the same or different DIVs.
+//
+
 var _element = document.getElementById("c1");
 var elementWidth = _element.offsetWidth;
 var elementHeight = _element.offsetHeight;
@@ -52,9 +55,10 @@ function showThisExperiment(event) {
             showThis = new p5(exp2, 'c1');
             break;
         default:
-            return true;
+            return false;
     }
 }
 
 var parent = document.getElementById('expIndex');
 parent.addEventListener('click', showThisExperiment);
+
