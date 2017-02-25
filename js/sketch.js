@@ -43,11 +43,11 @@ function getDescription(_sketch) {
 
   switch(_sketch) {
         case 'exp1':
-            idTag.innerHTML = exp1.specs["id"];
-            name.innerHTML = exp1.specs.name;
-            description.innerHTML = exp1.specs.description;
-            repository.innerHTML = exp1.specs.repository.representation;
-            repository.setAttribute("href", exp1.specs.repository.link);
+            idTag.innerHTML = exp1_Specs.id;
+            name.innerHTML = exp1_Specs.name;
+            description.innerHTML = exp1_Specs.description;
+            repository.innerHTML = exp1_Specs.repository.representation;
+            repository.setAttribute("href", exp1_Specs.repository.link);
             break;
         default:
             return false;

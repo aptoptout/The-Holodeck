@@ -10,26 +10,26 @@
 // This sketch is adapted and remodeled in P5 and for the web (obviously)
 // This sketch uses the instance mode for P5 to create multiple canvases in different DIVS on the page
 
-var exp1 = function(p) {
-  var specs = {
-    id : "Experiment 01",
-    name : "Fast Connecting Dots",
-    description: "As the dots fly, \
-                  when close enough \
-                  they will connect \
-                  with each other, \
-                  creating a organic \
-                  chain of random events.\
-                  Hold your mouse inside \
-                  the canvas to attract \
-                  all the dots as the \
-                  mouse has gravitational attraction.",
-    repository: {
-      link : "https://github.com/martijndeheer/The-Holodeck/blob/gh-pages/js/Experiment_01/Exp1.js",
-      representation: "See Experiment 01's code"
-    }
-  };
+var exp1_Specs = {
+  id : "Experiment 01",
+  name : "Fast Connecting Dots",
+  description: "As the dots fly, \
+                when close enough \
+                they will connect \
+                with each other, \
+                creating a organic \
+                chain of random events.\
+                Hold your mouse inside \
+                the canvas to attract \
+                all the dots as the \
+                mouse has gravitational attraction.",
+  repository: {
+    link : "https://github.com/martijndeheer/The-Holodeck/blob/gh-pages/js/Experiment_01/Exp1.js",
+    representation: "See Experiment 01's code"
+  }
+};
 
+var exp1 = function(p) {
   var bubbles = new Array(80);
   var attractor;
 
