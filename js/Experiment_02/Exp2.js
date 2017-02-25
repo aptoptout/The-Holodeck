@@ -42,10 +42,9 @@ var exp2 = function(p) {
     p.ambientLight(255, 255, 255);
     p.normalMaterial();
 
-    p.translate(-50, -50, -50);
-
     p.scale(90);
 
+    p.translate(-0.5, -0.5, -0.5);
     p.beginShape();
       p.fill(255, 32);
 
