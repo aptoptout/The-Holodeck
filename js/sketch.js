@@ -35,6 +35,25 @@ function getSiblings(n) {
   return getChildren(n.parentNode.firstChild, n);
 }
 
+function getDescription(_sketch) {
+  var idTag = document.getElementById("idTag");
+  var name = document.getElementById("name");
+  var description = document.getElementById("description");
+  var repository = document.getElementById("repository");
+
+  switch(_sketch) {
+        case 'exp1':
+            idTag.innerHTML = exp1.specs.id;
+            name.innerHTML = exp1.specs.name;
+            description.innerHTML = exp1.specs.description;
+            repository.innerHTML = exp1.specs.repository.representation;
+            repository.setAttribute("href", exp1.specs.repository.link);
+            break;
+        default:
+            return false;
+    }
+}
+
 function showThisExperiment(event) {
     var _click = event.target.id;
     event.target.classList.toggle("activeEl");
@@ -49,6 +68,7 @@ function showThisExperiment(event) {
 
     switch(_click) {
         case 'exp1':
+            getDescription(_click);
             showThis = new p5(exp1, 'c1');
             break;
         case 'exp2':

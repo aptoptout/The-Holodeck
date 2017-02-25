@@ -24,7 +24,10 @@ var exp1 = function(p) {
                   the canvas to attract \
                   all the dots as the \
                   mouse has gravitational attraction.",
-    repository: "https://github.com/martijndeheer/The-Holodeck/blob/gh-pages/js/Experiment_01/Exp1.js"
+    repository: {
+      link : "https://github.com/martijndeheer/The-Holodeck/blob/gh-pages/js/Experiment_01/Exp1.js",
+      representation: "See Experiment 01's code"
+    }
   };
 
   var bubbles = new Array(80);
