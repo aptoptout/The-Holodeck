@@ -15,7 +15,7 @@ var elementHeight = _element.offsetHeight;
 var showThis = new p5(exp1, 'c1');
 
 var idTag = document.getElementById("idTag");
-var name = document.getElementById("name");
+var nameTag = document.getElementById("name");
 var description = document.getElementById("description");
 var repository = document.getElementById("repository");
 
@@ -46,21 +46,21 @@ function getDescription() {
   switch(currentlyActive) {
         case 'exp1':
             idTag.innerHTML = exp1_Specs.id;
-            name.innerHTML = exp1_Specs.name;
+            nameTag.innerHTML = exp1_Specs.name;
             description.innerHTML = exp1_Specs.description;
             repository.innerHTML = exp1_Specs.repository.representation;
             repository.setAttribute("href", exp1_Specs.repository.link);
             break;
         case 'exp2':
             idTag.innerHTML = exp2_Specs.id;
-            name.innerHTML = exp2_Specs.name;
+            nameTag.innerHTML = exp2_Specs.name;
             description.innerHTML = exp2_Specs.description;
             repository.innerHTML = exp2_Specs.repository.representation;
             repository.setAttribute("href", exp2_Specs.repository.link);
             break;
         case 'exp3':
             idTag.innerHTML = exp3_Specs.id;
-            name.innerHTML = exp3_Specs.name;
+            nameTag.innerHTML = exp3_Specs.name;
             description.innerHTML = exp3_Specs.description;
             repository.innerHTML = exp3_Specs.repository.representation;
             repository.setAttribute("href", exp3_Specs.repository.link);

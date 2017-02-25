@@ -20,6 +20,10 @@ html, body {
   color: rgba(255, 127, 127, 255);
 }
 
+#specs h1 {
+  font-size: 1.2em;
+}
+
 #p5_loading {
   margin: 0;
   padding: 0;
