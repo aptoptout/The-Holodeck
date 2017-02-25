@@ -18,3 +18,4 @@ All the experiments are [here](https://github.com/martijndeheer/The-Holodeck/tre
 - [ ] Drawing a navigational mountain like landscape [H6 of Symbiotic Spark's COMPOSITION 01]
 - [ ] Adding custom loading screen for preload and in between experiments.
 - [ ] Adding loading states when an 'end' of an experiment is reached and therefor loading the next experiment (chaining the experiments according to queries and borders). 
+- [x] Adding description and experiment specific content aside.
