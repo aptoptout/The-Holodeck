@@ -42,47 +42,47 @@ var exp2 = function(p) {
     p.ambientLight(255, 255, 255);
     p.normalMaterial();
 
-    p.scale(90);
+    // p.scale(90);
 
-    p.translate(-0.5, -0.5, -0.5);
+    p.translate(-50, -50, -50);
     p.beginShape();
       p.fill(255, 32);
 
       // +Z "front" face
-      p.vertex(-1, -1,  1, 0, 0);
-      p.vertex( 1, -1,  1, 1, 0);
-      p.vertex( 1,  1,  1, 1, 1);
-      p.vertex(-1,  1,  1, 0, 1);
+      p.vertex(-100, -100,  100, 0, 0);
+      p.vertex( 100, -100,  100, 100, 0);
+      p.vertex( 100,  100,  100, 100, 100);
+      p.vertex(-100,  100,  100, 0, 100);
 
       // -Z "back" face
-      p.vertex( 1, -1, -1, 0, 0);
-      p.vertex(-1, -1, -1, 1, 0);
-      p.vertex(-1,  1, -1, 1, 1);
-      p.vertex( 1,  1, -1, 0, 1);
+      p.vertex( 100, -100, -100, 0, 0);
+      p.vertex(-100, -100, -100, 100, 0);
+      p.vertex(-100,  100, -100, 100, 100);
+      p.vertex( 100,  100, -100, 0, 100);
 
       // +Y "bottom" face
-      p.vertex(-1,  1,  1, 0, 0);
-      p.vertex( 1,  1,  1, 1, 0);
-      p.vertex( 1,  1, -1, 1, 1);
-      p.vertex(-1,  1, -1, 0, 1);
+      p.vertex(-100,  100,  100, 0, 0);
+      p.vertex( 100,  100,  100, 100, 0);
+      p.vertex( 100,  100, -100, 100, 100);
+      p.vertex(-100,  100, -100, 0, 100);
 
       // -Y "top" face
-      p.vertex(-1, -1, -1, 0, 0);
-      p.vertex( 1, -1, -1, 1, 0);
-      p.vertex( 1, -1,  1, 1, 1);
-      p.vertex(-1, -1,  1, 0, 1);
+      p.vertex(-100, -100, -100, 0, 0);
+      p.vertex( 100, -100, -100, 100, 0);
+      p.vertex( 100, -100,  100, 100, 100);
+      p.vertex(-100, -100,  100, 0, 100);
 
       // +X "right" face
-      p.vertex( 1, -1,  1, 0, 0);
-      p.vertex( 1, -1, -1, 1, 0);
-      p.vertex( 1,  1, -1, 1, 1);
-      p.vertex( 1,  1,  1, 0, 1);
+      p.vertex( 100, -100,  100, 0, 0);
+      p.vertex( 100, -100, -100, 100, 0);
+      p.vertex( 100,  100, -100, 100, 100);
+      p.vertex( 100,  100,  100, 0, 100);
 
       // -X "left" face
-      p.vertex(-1, -1, -1, 0, 0);
-      p.vertex(-1, -1,  1, 1, 0);
-      p.vertex(-1,  1,  1, 1, 1);
-      p.vertex(-1,  1, -1, 0, 1);
+      p.vertex(-100, -100, -100, 0, 0);
+      p.vertex(-100, -100,  100, 100, 0);
+      p.vertex(-100,  100,  100, 100, 100);
+      p.vertex(-100,  100, -100, 0, 100);
     p.endShape();
   };
 
