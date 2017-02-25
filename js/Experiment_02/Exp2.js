@@ -32,10 +32,10 @@ var exp2 = function(p) {
     p.ambientLight(255, 255, 255);
     p.normalMaterial();
 
+    translate(-50, -50, -50);
+    
     p.beginShape(p.LINES);
-      p.fill(0, 64);
-      p.stroke(255);
-      p.strokeWeight(2);
+      p.fill(255, 32);
 
       p.vertex(0, 0, 0);
       p.vertex(100, 0, 0);
