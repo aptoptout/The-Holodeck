@@ -13,6 +13,7 @@ var exp2 = function(p) {
 
   p.setup = function() {
     p.createCanvas(elementWidth, elementHeight, p.WEBGL);
+    p.perspective(120, elementWidth / elementHeight, 1, 2000)
     p.frameRate(30);    
   };
 
@@ -21,18 +22,16 @@ var exp2 = function(p) {
 
     var mapRotation = p.map(p.mouseX, 0, elementWidth, 0, 2 * Math.PI);
 
-    // if((p.mouseX < p.width) && (p.mouseX > 0) && 
-    //    (p.mouseY < p.height) && (p.mouseY > 0)) {
-    //   p.rotateX(mapRotation);
-    // }
-
-    p.orbitControl();
+    if((p.mouseX < p.width) && (p.mouseX > 0) && 
+       (p.mouseY < p.height) && (p.mouseY > 0)) {
+      p.rotateX(mapRotation);
+    }
 
     p.noFill();
     p.stroke(255);
     p.strokeWeight(1);
 
-    p.rect(0, 0, 100, 100);
+    p.box(100, 100, 100);
   };
 
 };
