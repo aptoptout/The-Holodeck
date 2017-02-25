@@ -30,7 +30,6 @@ var exp2 = function(p) {
       p.rotateX(mapRotation);
     }
 
-    p.rectMode(p.CENTER);
     p.rect(elementWidth/2, elementHeight/2, 100, 100);
   };
 
