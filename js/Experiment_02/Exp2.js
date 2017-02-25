@@ -18,10 +18,6 @@ var exp2 = function(p) {
 
   p.draw = function() {
     p.background(0);
-    
-    p.noFill();
-    p.stroke(255);
-    p.strokeWeight(1);
 
     var mapRotation = p.map(p.mouseX, 0, elementWidth, 0, 2 * Math.PI);
 
@@ -30,7 +26,11 @@ var exp2 = function(p) {
       p.rotateX(mapRotation);
     }
 
-    p.rect(elementWidth/2, elementHeight/2, 100, 100);
+    p.noFill();
+    p.stroke(255);
+    p.strokeWeight(1);
+
+    p.rect(0, 0, 100, 100);
   };
 
 };
