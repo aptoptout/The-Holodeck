@@ -44,21 +44,46 @@ var exp2 = function(p) {
 
     p.translate(-50, -50, -50);
 
-    p.beginShape(p.LINES);
+    p.scale(90);
+
+    p.beginShape();
       p.fill(255, 32);
 
-      p.vertex(0, 0, 0);
-      p.vertex(100, 0, 0);
+      // +Z "front" face
+      p.vertex(-1, -1,  1, 0, 0);
+      p.vertex( 1, -1,  1, 1, 0);
+      p.vertex( 1,  1,  1, 1, 1);
+      p.vertex(-1,  1,  1, 0, 1);
 
-      p.vertex(100, 0, 100);
-      p.vertex(0, 0, 100);
+      // -Z "back" face
+      p.vertex( 1, -1, -1, 0, 0);
+      p.vertex(-1, -1, -1, 1, 0);
+      p.vertex(-1,  1, -1, 1, 1);
+      p.vertex( 1,  1, -1, 0, 1);
 
-      p.vertex(100, 100, 0);
-      p.vertex(0, 100, 0);
+      // +Y "bottom" face
+      p.vertex(-1,  1,  1, 0, 0);
+      p.vertex( 1,  1,  1, 1, 0);
+      p.vertex( 1,  1, -1, 1, 1);
+      p.vertex(-1,  1, -1, 0, 1);
 
-      p.vertex(0, 100, 100);
-      p.vertex(100, 100, 100);
-      
+      // -Y "top" face
+      p.vertex(-1, -1, -1, 0, 0);
+      p.vertex( 1, -1, -1, 1, 0);
+      p.vertex( 1, -1,  1, 1, 1);
+      p.vertex(-1, -1,  1, 0, 1);
+
+      // +X "right" face
+      p.vertex( 1, -1,  1, 0, 0);
+      p.vertex( 1, -1, -1, 1, 0);
+      p.vertex( 1,  1, -1, 1, 1);
+      p.vertex( 1,  1,  1, 0, 1);
+
+      // -X "left" face
+      p.vertex(-1, -1, -1, 0, 0);
+      p.vertex(-1, -1,  1, 1, 0);
+      p.vertex(-1,  1,  1, 1, 1);
+      p.vertex(-1,  1, -1, 0, 1);
     p.endShape(p.CLOSE);
   };
 
