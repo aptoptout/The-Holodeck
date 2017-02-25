@@ -20,16 +20,19 @@ var exp2 = function(p) {
   p.draw = function() {
     p.background(0);
 
-    var mapRotation = p.map(p.mouseX, 0, elementWidth, 0, 2 * Math.PI);
+    var mapRotationX = p.map(p.mouseX, 0, elementWidth, 0, 2 * Math.PI);
+    var mapRotationY = p.map(p.mouseY, 0, elementHeight, 0, 2 * Math.PI);
 
     if((p.mouseX < p.width) && (p.mouseX > 0) && 
        (p.mouseY < p.height) && (p.mouseY > 0)) {
-      p.rotateX(mapRotation);
+      p.rotateY(mapRotationX);
+      p.rotateX(mapRotationY);
     }
 
     p.noFill();
     p.stroke(255);
     p.strokeWeight(1);
+    p.ambientLight(255, 255, 255);
 
     p.box(100, 100, 100);
   };
