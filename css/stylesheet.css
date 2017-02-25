@@ -12,18 +12,14 @@ html, body {
   line-height: 1.5em;
 }
 
-#specWrapper {
-  position: relative;
-}
-
 #specs {
-  padding-top: 1em;
-
-  position: absolute;
+  padding-top: 4em;
 
   border-top: 1px solid black;
+}
 
-  bottom: 0;
+#specs * {
+  font-size: 0.5em;
 }
 
 #p5_loading {
