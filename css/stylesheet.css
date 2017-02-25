@@ -12,6 +12,17 @@ html, body {
   line-height: 1.5em;
 }
 
+#p5_loading {
+  background-color: blue;
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  height: 400px;
+  width: 400px;
+}
+
 #gridWrapper {
   width: 100%;
   height: 100%;
