@@ -11,7 +11,7 @@
 // This sketch uses the instance mode for P5 to create multiple canvases in different DIVS on the page
 
 var exp1 = function(p) {
-  this.specs = {
+  var specs = {
     id : "Experiment 01",
     name : "Fast Connecting Dots",
     description: "As the dots fly, \
