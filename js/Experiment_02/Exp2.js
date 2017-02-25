@@ -36,15 +36,17 @@ var exp2 = function(p) {
 
     p.beginShape();
       p.fill(0, 64);
+      
       p.vertex(0, 0, 0);
       p.vertex(100, 0, 0);
       p.vertex(100, 100, 0);
       p.vertex(0, 100, 0);
 
+      p.vertex(0, 100, 100);
       p.vertex(0, 0, 100);
       p.vertex(100, 0, 100);
       p.vertex(100, 100, 100);
-      p.vertex(0, 100, 100);
+      
     p.endShape(p.CLOSE);
   };
 
