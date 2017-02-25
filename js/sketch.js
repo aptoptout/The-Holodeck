@@ -43,7 +43,7 @@ function getSiblings(n) {
 function getDescription() {
   var currentlyActive = document.getElementsByClassName("activeEl");
   var currentlyActiveId = currentlyActive.id;
-  console.log(currentlyActiveId);
+  console.log(currentlyActiveId, currentlyActive);
   switch(currentlyActiveId) {
         case 'exp1':
             idTag.innerHTML = exp1_Specs.id;
