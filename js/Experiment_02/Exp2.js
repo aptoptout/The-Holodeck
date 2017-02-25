@@ -84,7 +84,7 @@ var exp2 = function(p) {
       p.vertex(-1, -1,  1, 1, 0);
       p.vertex(-1,  1,  1, 1, 1);
       p.vertex(-1,  1, -1, 0, 1);
-    p.endShape(p.CLOSE);
+    p.endShape();
   };
 
 };
