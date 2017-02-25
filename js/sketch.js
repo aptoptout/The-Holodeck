@@ -84,13 +84,15 @@ function showThisExperiment(event) {
 
     switch(_click) {
         case 'exp1':
-            getDescription(_click);
+            getDescription();
             showThis = new p5(exp1, 'c1');
             break;
         case 'exp2':
+            getDescription();
             showThis = new p5(exp2, 'c1');
             break;
         case 'exp3':
+            getDescription();
             showThis = new p5(exp3, 'c1');
             break;
         default:
