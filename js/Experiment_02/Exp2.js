@@ -12,7 +12,7 @@
 var exp2 = function(p) {
 
   p.setup = function() {
-    p.createCanvas(elementWidth, elementHeight);
+    p.createCanvas(elementWidth, elementHeight, p.WEBGL);
     p.frameRate(30);    
   };
 
