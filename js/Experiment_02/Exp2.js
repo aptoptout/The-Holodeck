@@ -29,23 +29,23 @@ var exp2 = function(p) {
       p.rotateX(mapRotationY);
     }
 
-    p.stroke(255);
-    p.strokeWeight(1);
     p.ambientLight(255, 255, 255);
     p.normalMaterial();
 
     p.beginShape();
       p.fill(0, 64);
-      
+      p.stroke(255);
+      p.strokeWeight(1);
+
       p.vertex(0, 0, 0);
       p.vertex(100, 0, 0);
       p.vertex(100, 100, 0);
       p.vertex(0, 100, 0);
 
       p.vertex(0, 100, 100);
-      p.vertex(0, 0, 100);
-      p.vertex(100, 0, 100);
       p.vertex(100, 100, 100);
+      p.vertex(100, 0, 100);
+      p.vertex(0, 0, 100);
       
     p.endShape(p.CLOSE);
   };
