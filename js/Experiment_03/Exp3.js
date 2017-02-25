@@ -16,7 +16,7 @@ var exp3 = function(p) {
   }
 
   p.setup = function() {
-    p.createCanvas(elementWidth, elementHeight, p.WEBGL);
+    p.createCanvas(elementWidth, elementHeight);
     p.frameRate(30);    
   };
 
@@ -26,8 +26,6 @@ var exp3 = function(p) {
     p.noFill();
     p.stroke(255);
     p.strokeWeight(1);
-
-    // p.rotateX(p.mouseX);
 
     p.rectMode(p.CENTER);
     p.rect(elementWidth/2, elementHeight/2, 100, 100);
