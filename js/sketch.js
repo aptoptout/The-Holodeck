@@ -43,7 +43,7 @@ function getDescription(_sketch) {
 
   switch(_sketch) {
         case 'exp1':
-            idTag.innerHTML = exp1.specs.id;
+            idTag.innerHTML = exp1.specs["id"];
             name.innerHTML = exp1.specs.name;
             description.innerHTML = exp1.specs.description;
             repository.innerHTML = exp1.specs.repository.representation;

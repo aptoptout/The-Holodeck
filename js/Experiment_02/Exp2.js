@@ -32,8 +32,8 @@ var exp2 = function(p) {
     p.ambientLight(255, 255, 255);
     p.normalMaterial();
 
-    translate(-50, -50, -50);
-    
+    p.translate(-50, -50, -50);
+
     p.beginShape(p.LINES);
       p.fill(255, 32);
 
