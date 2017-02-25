@@ -23,7 +23,7 @@ var exp2 = function(p) {
     p.stroke(255);
     p.strokeWeight(1);
 
-    var mapRotation = p.map(p.mouseX, 0, width, 0, 2 * Math.PI);
+    var mapRotation = p.map(p.mouseX, 0, elementWidth, 0, 2 * Math.PI);
 
     if((p.mouseX < p.width) && (p.mouseX > 0) && 
        (p.mouseY < p.height) && (p.mouseY > 0)) {
