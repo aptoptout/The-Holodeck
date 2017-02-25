@@ -14,6 +14,17 @@ var elementHeight = _element.offsetHeight;
 
 var showThis = new p5(exp1, 'c1');
 
+var idTag = document.getElementById("idTag");
+var name = document.getElementById("name");
+var description = document.getElementById("description");
+var repository = document.getElementById("repository");
+
+idTag.innerHTML = exp1_Specs.id;
+name.innerHTML = exp1_Specs.name;
+description.innerHTML = exp1_Specs.description;
+repository.innerHTML = exp1_Specs.repository.representation;
+repository.setAttribute("href", exp1_Specs.repository.link);
+
 function removeActiveClass(n){
   if(n.classList.contains("activeEl")){
     n.classList.remove("activeEl");
@@ -36,11 +47,6 @@ function getSiblings(n) {
 }
 
 function getDescription(_sketch) {
-  var idTag = document.getElementById("idTag");
-  var name = document.getElementById("name");
-  var description = document.getElementById("description");
-  var repository = document.getElementById("repository");
-
   switch(_sketch) {
         case 'exp1':
             idTag.innerHTML = exp1_Specs.id;

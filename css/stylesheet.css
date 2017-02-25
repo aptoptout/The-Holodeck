@@ -13,11 +13,17 @@ html, body {
 }
 
 #specs {
-  padding-top: 4em;
+  margin-top: 4em;
 
   border-top: 1px solid black;
 
-  font-size: 0.75em;
+  color: rgba(255, 127, 127, 255);
+}
+
+#specs h1 {
+  font-size: 1.5em;
+
+  margin: 0 0 0.25em 0;
 }
 
 #p5_loading {
