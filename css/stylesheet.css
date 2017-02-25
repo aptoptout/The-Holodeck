@@ -13,14 +13,17 @@ html, body {
 }
 
 #p5_loading {
+  height: 100%;
+  width: 100%;
+
+  margin: 0;
+  padding: 0;
+
   background-color: blue;
-  color: white;
-  padding: 20px;
-  box-sizing: border-box;
-  display: block;
-  position: absolute;
-  height: 400px;
-  width: 400px;
+  color: pink;
+
+  text-align: center;
+  font-size: 2em;
 }
 
 #gridWrapper {
