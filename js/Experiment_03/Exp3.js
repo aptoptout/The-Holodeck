@@ -12,7 +12,7 @@
 var exp3 = function(p) {
 
   p.preload = function() {
-    p.loadJSON('https://martijndeheer.github.io/The-Holodeck/Experiment_03/Mesh.json');
+    p.loadJSON('https://martijndeheer.github.io/The-Holodeck/js/Experiment_03/Mesh.json');
   }
 
   p.setup = function() {
@@ -27,7 +27,7 @@ var exp3 = function(p) {
     p.stroke(255);
     p.strokeWeight(1);
 
-    p.rotateX(p.mouseX);
+    // p.rotateX(p.mouseX);
 
     p.rectMode(p.CENTER);
     p.rect(elementWidth/2, elementHeight/2, 100, 100);

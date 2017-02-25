@@ -21,10 +21,12 @@ var exp2 = function(p) {
 
     var mapRotation = p.map(p.mouseX, 0, elementWidth, 0, 2 * Math.PI);
 
-    if((p.mouseX < p.width) && (p.mouseX > 0) && 
-       (p.mouseY < p.height) && (p.mouseY > 0)) {
-      p.rotateX(mapRotation);
-    }
+    // if((p.mouseX < p.width) && (p.mouseX > 0) && 
+    //    (p.mouseY < p.height) && (p.mouseY > 0)) {
+    //   p.rotateX(mapRotation);
+    // }
+
+    p.orbitControl();
 
     p.noFill();
     p.stroke(255);
