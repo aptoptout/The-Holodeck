@@ -12,7 +12,7 @@
 var exp3 = function(p) {
 
   p.preload = function() {
-    p.loadJSON('Mesh.json');
+    p.loadJSON('https://martijndeheer.github.io/The-Holodeck/Experiment_03/Mesh.json');
   }
 
   p.setup = function() {
