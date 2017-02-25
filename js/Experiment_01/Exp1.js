@@ -23,7 +23,7 @@ var exp1 = function(p) {
                   Hold your mouse inside \
                   the canvas to attract \
                   all the dots as the \
-                  mouse has gravitational attraction."
+                  mouse has gravitational attraction.",
     repository: "https://github.com/martijndeheer/The-Holodeck/blob/gh-pages/js/Experiment_01/Exp1.js"
   };
 
