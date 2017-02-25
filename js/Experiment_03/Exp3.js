@@ -9,6 +9,16 @@
 // This sketch is adapted and remodeled in P5 and for the web (obviously)
 // This sketch uses the instance mode for P5 to create multiple canvases in different DIVS on the page
 
+var exp3_Specs = {
+  id : "Experiment 03",
+  name : "Constructing 3D image with data",
+  description: "Taking an 3D model and map data to its points.",
+  repository: {
+    link : "https://github.com/martijndeheer/The-Holodeck/blob/gh-pages/js/Experiment_03/Exp3.js",
+    representation: "See Experiment 03's code"
+  }
+};
+
 var exp3 = function(p) {
 
   p.preload = function() {

@@ -9,6 +9,16 @@
 // This sketch is adapted and remodeled in P5 and for the web (obviously)
 // This sketch uses the instance mode for P5 to create multiple canvases in different DIVS on the page
 
+var exp2_Specs = {
+  id : "Experiment 02",
+  name : "Navigational 3D space",
+  description: "Navigating through 3D space with mouse and keys.",
+  repository: {
+    link : "https://github.com/martijndeheer/The-Holodeck/blob/gh-pages/js/Experiment_02/Exp2.js",
+    representation: "See Experiment 02's code"
+  }
+};
+
 var exp2 = function(p) {
 
   p.setup = function() {
