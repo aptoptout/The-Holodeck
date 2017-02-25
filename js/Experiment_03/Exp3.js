@@ -1,4 +1,4 @@
-// Experiment 02 — The Holodeck
+// Experiment 03 — The Holodeck
 // Martijn de Heer
 // http://www.martijndeheer.nl
 
@@ -9,7 +9,11 @@
 // This sketch is adapted and remodeled in P5 and for the web (obviously)
 // This sketch uses the instance mode for P5 to create multiple canvases in different DIVS on the page
 
-var exp2 = function(p) {
+var exp3 = function(p) {
+
+  p.preload = function() {
+    p.loadJSON('Mesh.json');
+  }
 
   p.setup = function() {
     p.createCanvas(elementWidth, elementHeight, p.WEBGL);
@@ -23,12 +27,7 @@ var exp2 = function(p) {
     p.stroke(255);
     p.strokeWeight(1);
 
-    var mapRotation = p.map(p.mouseX, 0, width, 0, 2 * Math.PI);
-
-    if((p.mouseX < p.width) && (p.mouseX > 0) && 
-       (p.mouseY < p.height) && (p.mouseY > 0)) {
-      p.rotateX(mapRotation);
-    }
+    p.rotateX(p.mouseX);
 
     p.rectMode(p.CENTER);
     p.rect(elementWidth/2, elementHeight/2, 100, 100);

@@ -54,6 +54,9 @@ function showThisExperiment(event) {
         case 'exp2':
             showThis = new p5(exp2, 'c1');
             break;
+        case 'exp3':
+            showThis = new p5(exp3, 'c1');
+            break;
         default:
             return false;
     }
