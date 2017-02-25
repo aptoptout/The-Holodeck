@@ -23,12 +23,10 @@ var exp2 = function(p) {
     p.stroke(255);
     p.strokeWeight(1);
 
+    p.rotateX(p.mouseX);
+
     p.rectMode(p.CENTER);
     p.rect(elementWidth/2, elementHeight/2, 100, 100);
   };
-
-  function mousePressed() {
-    p.remove();
-  }
 
 };
