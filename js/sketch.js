@@ -19,12 +19,6 @@ var name = document.getElementById("name");
 var description = document.getElementById("description");
 var repository = document.getElementById("repository");
 
-idTag.innerHTML = exp1_Specs.id;
-name.innerHTML = exp1_Specs.name;
-description.innerHTML = exp1_Specs.description;
-repository.innerHTML = exp1_Specs.repository.representation;
-repository.setAttribute("href", exp1_Specs.repository.link);
-
 function removeActiveClass(n){
   if(n.classList.contains("activeEl")){
     n.classList.remove("activeEl");
@@ -46,8 +40,10 @@ function getSiblings(n) {
   return getChildren(n.parentNode.firstChild, n);
 }
 
-function getDescription(_sketch) {
-  switch(_sketch) {
+function getDescription() {
+  var currentlyActive = document.getElementsByClassName("activeEl");
+  var currentlyActiveId = currentlyActive.id;
+  switch(currentlyActiveId) {
         case 'exp1':
             idTag.innerHTML = exp1_Specs.id;
             name.innerHTML = exp1_Specs.name;
@@ -101,6 +97,8 @@ function showThisExperiment(event) {
             return false;
     }
 }
+
+getDescription();
 
 var parent = document.getElementById('expIndex');
 parent.addEventListener('click', showThisExperiment);
