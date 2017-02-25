@@ -32,7 +32,7 @@ var exp2 = function(p) {
     p.noFill();
     p.stroke(255);
     p.strokeWeight(1);
-    p.ambientLight(255, 255, 255);
+    // p.ambientLight(255, 255, 255);
 
     p.beginShape();
       p.vertex(0, 0, 0);
