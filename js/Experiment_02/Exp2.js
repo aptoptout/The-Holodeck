@@ -35,15 +35,15 @@ var exp2 = function(p) {
     p.ambientLight(255, 255, 255);
 
     p.beginShape();
-      vertex(0, 0, 0);
-      vertex(100, 0, 0);
-      vertex(100, 100, 0);
-      vertex(0, 100, 0);
+      p.vertex(0, 0, 0);
+      p.vertex(100, 0, 0);
+      p.vertex(100, 100, 0);
+      p.vertex(0, 100, 0);
 
-      vertex(0, 0, 100);
-      vertex(100, 0, 100);
-      vertex(100, 100, 100);
-      vertex(0, 100, 100);
+      p.vertex(0, 0, 100);
+      p.vertex(100, 0, 100);
+      p.vertex(100, 100, 100);
+      p.vertex(0, 100, 100);
     p.endShape(CLOSE);
   };
 
