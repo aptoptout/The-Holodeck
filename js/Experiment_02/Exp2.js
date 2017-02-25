@@ -34,7 +34,17 @@ var exp2 = function(p) {
     p.strokeWeight(1);
     p.ambientLight(255, 255, 255);
 
-    p.box(100, 100, 100);
+    p.beginShape();
+      vertex(0, 0, 0);
+      vertex(100, 0, 0);
+      vertex(100, 100, 0);
+      vertex(0, 100, 0);
+
+      vertex(0, 0, 100);
+      vertex(100, 0, 100);
+      vertex(100, 100, 100);
+      vertex(0, 100, 100);
+    p.endShape(CLOSE);
   };
 
 };
