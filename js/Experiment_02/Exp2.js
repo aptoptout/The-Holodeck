@@ -53,13 +53,13 @@ var exp2 = function(p) {
     var centerPos = p.createVector(centerPosX, centerPosY, centerPosZ);
 
     this.show = function() {
-      fill(0);
-      stroke(255);
+      p.fill(0);
+      p.stroke(255);
       p.pushMatrix();
       p.rect(centerPosX, centerPosY, trueSize, trueSize);
       p.popMatrix();
       p.rotateY(p.HALF_PI);
-      translate(0, 0, trueSize);
+      p.translate(0, 0, trueSize);
       p.rect(centerPosX, centerPosY, trueSize, trueSize);
     }
 
