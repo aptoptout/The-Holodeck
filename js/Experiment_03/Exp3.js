@@ -22,12 +22,13 @@ var exp3_Specs = {
 var exp3 = function(p) {
 
   p.preload = function() {
-    p.loadJSON('https://martijndeheer.github.io/The-Holodeck/js/Experiment_03/Mesh.json');
   }
 
   p.setup = function() {
     p.createCanvas(elementWidth, elementHeight);
-    p.frameRate(30);    
+    p.frameRate(30);
+    p.loadJSON('https://martijndeheer.github.io/The-Holodeck/js/Experiment_03/Mesh.json');
+
   };
 
   p.draw = function() {

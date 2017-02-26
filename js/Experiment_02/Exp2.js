@@ -21,10 +21,15 @@ var exp2_Specs = {
 
 var exp2 = function(p) {
 
+  var _Box;
+
   p.setup = function() {
     p.createCanvas(elementWidth, elementHeight, p.WEBGL);
     p.perspective(120, elementWidth / elementHeight, 1, 2000)
-    p.frameRate(30);    
+    p.frameRate(30);
+
+    _Box = new boxShape(width/2, height/2, 0, 100);
+
   };
 
   p.draw = function() {
@@ -42,48 +47,30 @@ var exp2 = function(p) {
     p.ambientLight(255, 255, 255);
     p.normalMaterial();
 
-    // p.scale(90);
+    _Box.show();
+  };
 
-    p.translate(-50, -50, -50);
-    p.beginShape();
-      p.fill(255, 32);
+  var boxShape = function(centerPosX, centerPosY, centerPosZ, size) {
+    var halfSize = size/2;
+    var trueSize = size;
+    var centerPos = p.createVector(centerPosX, centerPosY, centerPosZ);
 
-      // +Z "front" face
-      p.vertex(-100, -100,  100);
-      p.vertex( 100, -100,  100);
-      p.vertex( 100,  100,  100);
-      p.vertex(-100,  100,  100);
+    this.show = function() {
+      p.rect(centerPosX+halfSize, centerPosY+halfSize, trueSize, trueSize);
+    }
 
-      // -Z "back" face
-      p.vertex( 100, -100, -100);
-      p.vertex(-100, -100, -100);
-      p.vertex(-100,  100, -100);
-      p.vertex( 100,  100, -100);
-
-      // +Y "bottom" face
-      p.vertex(-100,  100,  100);
-      p.vertex( 100,  100,  100);
-      p.vertex( 100,  100, -100);
-      p.vertex(-100,  100, -100);
-
-      // -Y "top" face
-      p.vertex(-100, -100, -100);
-      p.vertex( 100, -100, -100);
-      p.vertex( 100, -100,  100);
-      p.vertex(-100, -100,  100);
-
-      // +X "right" face
-      p.vertex( 100, -100,  100);
-      p.vertex( 100, -100, -100);
-      p.vertex( 100,  100, -100);
-      p.vertex( 100,  100,  100);
-
-      // -X "left" face
-      p.vertex(-100, -100, -100);
-      p.vertex(-100, -100,  100);
-      p.vertex(-100,  100,  100);
-      p.vertex(-100,  100, -100);
-    p.endShape();
   };
 
 };
+
+
+
+
+
+
+
+
+
+
+
+
