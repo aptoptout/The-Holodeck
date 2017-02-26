@@ -52,7 +52,7 @@ var exp2 = function(p) {
 
     p.ambientLight(255, 255, 255);
 
-    for(var i = 0; i < total; i++) {
+    for(var i = 0; i < 1; i++) {
       _Boxes[i].show();
     }
   };
