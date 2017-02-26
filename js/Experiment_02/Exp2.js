@@ -23,7 +23,7 @@ var exp2 = function(p) {
 
   var _Boxes = new Array(100);
   var total = 50;
-  var z;
+  var z = 0;
 
   p.setup = function() {
     p.createCanvas(elementWidth, elementHeight, p.WEBGL);
