@@ -55,12 +55,11 @@ var exp2 = function(p) {
     this.show = function() {
       p.fill(0);
       p.stroke(255);
-      p.push();
-      p.rect(centerPosX, centerPosY, trueSize, trueSize);
-      p.pop();
-      p.rotateY(p.HALF_PI);
-      p.translate(0, 0, trueSize);
-      p.rect(centerPosX, centerPosY, trueSize, trueSize);
+      beginShape();
+        vertex(100,23,-100);
+        vertex(200,23,-50);
+        vertex(150, 45,-100);
+      endShape();
     }
 
   };
