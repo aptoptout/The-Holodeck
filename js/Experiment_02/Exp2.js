@@ -45,7 +45,6 @@ var exp2 = function(p) {
     }
 
     p.ambientLight(255, 255, 255);
-    p.basicMaterial();
 
     _Box.show();
   };
