@@ -28,7 +28,7 @@ var exp2 = function(p) {
     p.perspective(120, elementWidth / elementHeight, 1, 2000)
     p.frameRate(30);
 
-    _Box = new boxShape(width/2, height/2, 0, 100);
+    _Box = new boxShape(elementWidth/2, elementHeight/2, 0, 100);
 
   };
 
