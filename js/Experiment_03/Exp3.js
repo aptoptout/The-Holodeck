@@ -24,7 +24,7 @@ var exp3 = function(p) {
   var jsonObject;
 
   p.setup = function() {
-    p.createCanvas(elementWidth, elementHeight, WEBGL);
+    p.createCanvas(elementWidth, elementHeight, p.WEBGL);
     p.frameRate(30);
     p.loadJSON('https://martijndeheer.github.io/The-Holodeck/js/Experiment_03/Mesh.json', gotData);
 
