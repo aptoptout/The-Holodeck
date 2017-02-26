@@ -62,6 +62,7 @@ var exp2 = function(p) {
     var centerPos = p.createVector(centerPosX, centerPosY, centerPosZ);
 
     this.show = function() {
+      p.translate(0, 0, centerPos.z);
       p.rect(centerPos.x-halfSize, centerPos.y-halfSize, trueSize, trueSize);
     }
 
