@@ -28,7 +28,7 @@ var exp2 = function(p) {
     p.perspective(120, elementWidth / elementHeight, 1, 2000)
     p.frameRate(30);
 
-    _Box = new boxShape(elementWidth/2, elementHeight/2, 0, 100);
+    _Box = new boxShape(0, 0, 0, 100);
 
   };
 
@@ -55,6 +55,8 @@ var exp2 = function(p) {
     var centerPos = p.createVector(centerPosX, centerPosY, centerPosZ);
 
     this.show = function() {
+      p.noFill();
+      p.stroke(255);
       p.rect(centerPos.x-halfSize, centerPos.y-halfSize, trueSize, trueSize);
     }
 
