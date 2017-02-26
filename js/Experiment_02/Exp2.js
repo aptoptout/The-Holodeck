@@ -21,14 +21,19 @@ var exp2_Specs = {
 
 var exp2 = function(p) {
 
-  var _Box;
+  var _Boxes = new Array(100);
+  var total = 50;
+  var z;
 
   p.setup = function() {
     p.createCanvas(elementWidth, elementHeight, p.WEBGL);
     p.perspective(120, elementWidth / elementHeight, 1, 2000)
     p.frameRate(30);
 
-    _Box = new boxShape(0, 0, 0, 100);
+    for(var i = 0; i < total; i++) {
+      _Boxes[i] = new boxShape(0, 0, z, 100);
+      z += 10;
+    }
 
   };
 
@@ -46,7 +51,9 @@ var exp2 = function(p) {
 
     p.ambientLight(255, 255, 255);
 
-    _Box.show();
+    for(var i = 0; i < total; i++) {
+      _Boxes[i].show();
+    }
   };
 
   var boxShape = function(centerPosX, centerPosY, centerPosZ, size) {
@@ -55,8 +62,6 @@ var exp2 = function(p) {
     var centerPos = p.createVector(centerPosX, centerPosY, centerPosZ);
 
     this.show = function() {
-      p.noFill();
-      p.stroke(255);
       p.rect(centerPos.x-halfSize, centerPos.y-halfSize, trueSize, trueSize);
     }
 
