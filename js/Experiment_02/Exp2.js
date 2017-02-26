@@ -44,6 +44,8 @@ var exp2 = function(p) {
       p.rotateX(mapRotationY);
     }
 
+    p.basicMaterial(255);
+
     _Box.show();
   };
 
@@ -55,10 +57,11 @@ var exp2 = function(p) {
     this.show = function() {
       p.fill(0);
       p.stroke(255);
+
       p.beginShape();
-        p.vertex(100,23,-100);
-        p.vertex(200,23,-50);
-        p.vertex(150, 45,-100);
+        p.vertex(100, 23, -100);
+        p.vertex(200, 23, -50);
+        p.vertex(150, 45, -100);
       p.endShape();
     }
 
