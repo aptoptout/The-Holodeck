@@ -55,9 +55,9 @@ var exp2 = function(p) {
     this.show = function() {
       p.fill(0);
       p.stroke(255);
-      p.pushMatrix();
+      p.push();
       p.rect(centerPosX, centerPosY, trueSize, trueSize);
-      p.popMatrix();
+      p.pop();
       p.rotateY(p.HALF_PI);
       p.translate(0, 0, trueSize);
       p.rect(centerPosX, centerPosY, trueSize, trueSize);
