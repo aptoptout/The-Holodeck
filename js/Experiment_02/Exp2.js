@@ -44,7 +44,8 @@ var exp2 = function(p) {
       p.rotateX(mapRotationY);
     }
 
-    p.basicMaterial(255);
+    p.ambientLight(255, 255, 255);
+    p.basicMaterial();
 
     _Box.show();
   };
@@ -55,14 +56,7 @@ var exp2 = function(p) {
     var centerPos = p.createVector(centerPosX, centerPosY, centerPosZ);
 
     this.show = function() {
-      p.fill(0);
-      p.stroke(255);
-
-      p.beginShape();
-        p.vertex(100, 23, -100);
-        p.vertex(200, 23, -50);
-        p.vertex(150, 45, -100);
-      p.endShape();
+      p.rect(centerPos.x-halfSize, centerPos.y-halfSize, trueSize, trueSize);
     }
 
   };
