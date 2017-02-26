@@ -33,6 +33,7 @@ var exp2 = function(p) {
     for(var i = 0; i < total; i++) {
       _Boxes[i] = new boxShape(0, 0, z, 100);
       z += 10;
+      console.log(z);
     }
 
   };
