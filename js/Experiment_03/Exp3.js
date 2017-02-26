@@ -21,25 +21,29 @@ var exp3_Specs = {
 
 var exp3 = function(p) {
 
-  p.preload = function() {
-  }
+  var jsonObject;
 
   p.setup = function() {
-    p.createCanvas(elementWidth, elementHeight);
+    p.createCanvas(elementWidth, elementHeight, WEBGL);
     p.frameRate(30);
-    p.loadJSON('https://martijndeheer.github.io/The-Holodeck/js/Experiment_03/Mesh.json');
+    p.loadJSON('https://martijndeheer.github.io/The-Holodeck/js/Experiment_03/Mesh.json', gotData);
 
   };
+
+  var gotData = function(data) {
+    jsonObject = data;
+  }
 
   p.draw = function() {
     p.background(0);
     
-    p.noFill();
-    p.stroke(255);
-    p.strokeWeight(1);
-
-    p.rectMode(p.CENTER);
-    p.rect(elementWidth/2, elementHeight/2, 100, 100);
+    if(gotData) {
+      for(var i = 0; i < jsonObject.meshes.vertices.length; i++) {
+        var position = jsonObject.meshes.vertices[i];
+        p.point(position, position, position);
+      }
+    }
+    
   };
 
 };
