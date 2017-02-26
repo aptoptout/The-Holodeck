@@ -31,16 +31,23 @@ var exp3 = function(p) {
   };
 
   var gotData = function(data) {
-    jsonObject = data;
+    jsonObject = data.meshes;
   }
 
   p.draw = function() {
     p.background(0);
     
     if(gotData) {
-      for(var i = 0; i < jsonObject.meshes.vertices.length; i++) {
-        var position = jsonObject.meshes.vertices[i];
-        p.point(position, position, position);
+      for(var i = 0; i < jsonObject.vertices.length; i++) {
+        z = Math.round(i / (elementWidth * elementHeight));
+        y = Math.round((i - z * elementWidth * elementHeight) / elementWidth);
+        x = i - elementWidth * (y + elementHeight * z);
+
+        var positionZ = jsonObject.vertices[z];
+        var positionY = jsonObject.vertices[y];
+        var positionX = jsonObject.vertices[x];
+
+        p.point(positionX, positionY, positionZ);
       }
     }
     
