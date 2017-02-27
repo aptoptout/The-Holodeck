@@ -101,7 +101,7 @@ function showThisExperiment(event) {
             break;
         case 'exp3':
             getDescription();
-            showThis = new p5(exp3, 'c1');
+            exp3(_element);
             break;
         default:
             return false;

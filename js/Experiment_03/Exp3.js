@@ -14,7 +14,7 @@ var exp3_Specs = {
   name : "Constructing 3D image with data",
   library : {
     link : "Three.js",
-    representation : "Three.js"
+    representation : "Threejs"
   },
   description: "Taking an 3D model and map data to its points.",
   repository: {
@@ -23,38 +23,15 @@ var exp3_Specs = {
   }
 };
 
-var exp3 = function(p) {
+var exp3 = function(target) {
 
-  var jsonObject;
+  var scene = new THREE.Scene(); 
+  var camera = new THREE.PerspectiveCamera( 75, elementWidth / elementHeight, 0.1, 1000 ); 
+  var renderer = new THREE.WebGLRenderer(); 
 
-  p.setup = function() {
-    p.createCanvas(elementWidth, elementHeight, p.WEBGL);
-    p.frameRate(30);
-    p.loadJSON('https://martijndeheer.github.io/The-Holodeck/js/Experiment_03/Mesh.json', gotData);
+  renderer.setSize( elementWidth, elementHeight ); 
+  document.target.appendChild( renderer.domElement );
 
-  };
-
-  var gotData = function(data) {
-    jsonObject = data.meshes.length;
-  }
-
-  p.draw = function() {
-    p.background(0);
-    
-    if(gotData) {
-      for(var i = 0; i < jsonObject.vertices; i++) {
-        z = Math.round(i / (elementWidth * elementHeight));
-        y = Math.round((i - z * elementWidth * elementHeight) / elementWidth);
-        x = i - elementWidth * (y + elementHeight * z);
-
-        var positionZ = jsonObject.vertices[z];
-        var positionY = jsonObject.vertices[y];
-        var positionX = jsonObject.vertices[x];
-
-        p.point(positionX, positionY, positionZ);
-      }
-    }
-    
-  };
 
 };
+

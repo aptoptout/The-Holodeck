@@ -30,9 +30,9 @@ var exp2 = function(p) {
   var z = 0;
 
   var cols, rows;
-  var scl = 20;
-  var w = elementWidth*1.5;
-  var h = elementHeight*1.5;
+  var scl = 100;
+  var w = elementWidth*1.2;
+  var h = elementHeight*1.2;
 
   var flying = 0;
 
@@ -94,7 +94,7 @@ var exp2 = function(p) {
       p.beginShape(p.TRIANGLE_STRIP);
       for (var x = 0; x < cols; x++) {
         p.vertex(x*scl, y*scl, terrain[x][y]);
-        p.vertex(x*scl, (y+1)*scl, terrain[x][y+1]);
+        // p.vertex(x*scl, (y+1)*scl, terrain[x][y+1]);
       }
       p.endShape();
     }
