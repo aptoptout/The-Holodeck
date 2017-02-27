@@ -86,7 +86,7 @@ var exp2 = function(p) {
       for (var x = 0; x < cols; x++) {
         p.push();
         p.translate(0, 0, terrain[x][y]);
-        p.rect(x*scl-halfSize, y*scl-halfSize, trueSize, trueSize);
+        p.rect(x*scl-2.5, y*scl-2.5, 5, 5);
         p.pop();
       }
     }

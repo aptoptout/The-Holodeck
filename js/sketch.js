@@ -12,7 +12,7 @@ var _element = document.getElementById("c1");
 var elementWidth = _element.offsetWidth;
 var elementHeight = _element.offsetHeight;
 
-// var showThis = new p5(exp1, 'c1');
+var showThis = new p5(exp1, 'c1');
 
 var idTag = document.getElementById("idTag");
 var nameTag = document.getElementById("name");
