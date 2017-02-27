@@ -23,15 +23,10 @@ var exp3_Specs = {
   }
 };
 
-var exp3 = function(target) {
 
-  var scene = new THREE.Scene(); 
-  var camera = new THREE.PerspectiveCamera( 75, elementWidth / elementHeight, 0.1, 1000 ); 
-  var renderer = new THREE.WebGLRenderer(); 
+var scene = new THREE.Scene(); 
+var camera = new THREE.PerspectiveCamera( 75, elementWidth / elementHeight, 0.1, 1000 ); 
+var renderer = new THREE.WebGLRenderer(); 
 
-  renderer.setSize( elementWidth, elementHeight ); 
-  document.target.appendChild( renderer.domElement );
-
-
-};
-
+renderer.setSize( elementWidth, elementHeight ); 
+document._element.appendChild( renderer.domElement );
