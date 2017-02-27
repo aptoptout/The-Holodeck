@@ -101,7 +101,7 @@ function showThisExperiment(event) {
             break;
         case 'exp3':
             getDescription();
-            exp3(_element);
+            showThis = new THREE(exp3);
             break;
         default:
             return false;

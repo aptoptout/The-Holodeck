@@ -24,9 +24,13 @@ var exp3_Specs = {
 };
 
 
-var scene = new THREE.Scene(); 
-var camera = new THREE.PerspectiveCamera( 75, elementWidth / elementHeight, 0.1, 1000 ); 
-var renderer = new THREE.WebGLRenderer(); 
+var exp2 = function(p) {
 
-renderer.setSize( elementWidth, elementHeight ); 
-document.getElementById("c1").append( renderer.domElement );
+  var scene = new p.THREE.Scene(); 
+  var camera = new p.THREE.PerspectiveCamera( 75, elementWidth / elementHeight, 0.1, 1000 ); 
+  var renderer = new p.THREE.WebGLRenderer(); 
+
+  p.renderer.setSize(elementWidth, elementHeight); 
+  document.getElementById("c1").append(p.renderer.domElement);
+  
+};
