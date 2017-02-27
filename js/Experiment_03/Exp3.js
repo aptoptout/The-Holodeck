@@ -31,14 +31,14 @@ var exp3 = function(p) {
   };
 
   var gotData = function(data) {
-    jsonObject = data.meshes;
+    jsonObject = data.meshes.length;
   }
 
   p.draw = function() {
     p.background(0);
     
     if(gotData) {
-      for(var i = 0; i < jsonObject.vertices.length; i++) {
+      for(var i = 0; i < jsonObject.vertices; i++) {
         z = Math.round(i / (elementWidth * elementHeight));
         y = Math.round((i - z * elementWidth * elementHeight) / elementWidth);
         x = i - elementWidth * (y + elementHeight * z);

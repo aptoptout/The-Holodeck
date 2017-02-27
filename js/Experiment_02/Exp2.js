@@ -25,6 +25,15 @@ var exp2 = function(p) {
   var total = 50;
   var z = 0;
 
+  var cols, rows;
+  var scl = 20;
+  var w = elementWidth*1.5;
+  var h = elementHeight*1.5;
+
+  var flying = 0;
+
+  var terrain = [];
+
   p.setup = function() {
     p.createCanvas(elementWidth, elementHeight, p.WEBGL);
     p.perspective(120, elementWidth / elementHeight, 1, 2000)
@@ -36,25 +45,59 @@ var exp2 = function(p) {
       console.log(z);
     }
 
+    cols = w / scl;
+    rows = h/ scl;
+
+    for (var x = 0; x < cols; x++) {
+      terrain[x] = [];
+      for (var y = 0; y < rows; y++) {
+        terrain[x][y] = 0; //specify a default value for now
+      }
+    }
+
   };
 
   p.draw = function() {
+    flying -= 0.1;
+    var yoff = flying;
+    for (var y = 0; y < rows; y++) {
+      var xoff = 0;
+      for (var x = 0; x < cols; x++) {
+        terrain[x][y] = p.map(p.noise(xoff, yoff), 0, 1, -100, 100);
+        xoff += 0.2;
+      }
+      yoff += 0.2;
+    }
+    
     p.background(0);
 
     var mapRotationX = p.map(p.mouseX, 0, elementWidth, 0, 2 * Math.PI);
     var mapRotationY = p.map(p.mouseY, elementHeight, 0, 0, 2 * Math.PI);
 
+    p.translate(0, 50, 0);
+
     if((p.mouseX < p.width) && (p.mouseX > 0) && 
        (p.mouseY < p.height) && (p.mouseY > 0)) {
       p.rotateY(mapRotationX);
-      p.rotateX(mapRotationY);
     }
 
-    p.ambientLight(255, 255, 255);
+    p.rotateX(-Math.PI/3);
+    // p.ambientLight(255, 255, 255);
+    p.fill(200,200,200, 50);
 
-    for(var i = 0; i < 1; i++) {
-      _Boxes[i].show();
+    p.translate(-w/2, -h/2);
+    for (var y = 0; y < rows-1; y++) {
+      p.beginShape(p.TRIANGLE_STRIP);
+      for (var x = 0; x < cols; x++) {
+        p.vertex(x*scl, y*scl, terrain[x][y]);
+        p.vertex(x*scl, (y+1)*scl, terrain[x][y+1]);
+      }
+      p.endShape();
     }
+
+    // for(var i = 0; i < 1; i++) {
+    //   _Boxes[i].show();
+    // }
   };
 
   var boxShape = function(centerPosX, centerPosY, centerPosZ, size) {
@@ -70,7 +113,6 @@ var exp2 = function(p) {
   };
 
 };
-
 
 
 
