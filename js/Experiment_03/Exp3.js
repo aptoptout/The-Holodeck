@@ -38,8 +38,7 @@ var exp3 = function(target) {
 
   camera.position.z = 5;
 
-  var _canvas = document.getElementsByTagName("canvas")[0];
-  canvas.setAttribute("id", "defaultCanvas0");
+  var _canvas = document.getElementsByTagName("canvas")[0].setAttribute("id", "defaultCanvas0");
 
   // Setting up what to draw (in this case a cube)
   var geometry = new THREE.BoxGeometry(1, 1, 1);
