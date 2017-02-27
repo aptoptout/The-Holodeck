@@ -43,7 +43,7 @@ var exp3 = function(target) {
   // Setting up what to draw (in this case a cube)
   var geometry = new THREE.BoxGeometry(1, 1, 1);
   // Setting up the wireframe
-  var wireframeGeometry = THREE.EdgesGeometry(geometry);
+  var wireframeGeometry = new THREE.EdgesGeometry(geometry);
   var mat = new THREE.LineBasicMaterial({ color: 0xffffff, linewidth: 2 });
   var wireframe = new THREE.LineSegments(geo, mat);
 
@@ -78,11 +78,11 @@ var exp3 = function(target) {
 
     if (e.keyCode == '38') {
       // up arrow
-      camera.position.z++;
+      camera.position.z--;
     }
     else if (e.keyCode == '40') {
       // down arrow
-      camera.position.z--;
+      camera.position.z++;
     }
     else if (e.keyCode == '37') {
       // left arrow
