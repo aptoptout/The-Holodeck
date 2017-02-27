@@ -12,6 +12,10 @@
 var exp2_Specs = {
   id : "Experiment 02",
   name : "Navigational 3D space",
+  library : {
+    link : "P5js",
+    representation : "P5js"
+  },
   description: "Navigating through 3D space with mouse and keys.",
   repository: {
     link : "https://github.com/martijndeheer/The-Holodeck/blob/gh-pages/js/Experiment_02/Exp2.js",
@@ -68,7 +72,7 @@ var exp2 = function(p) {
       }
       yoff += 0.2;
     }
-    
+
     p.background(0);
 
     var mapRotationX = p.map(p.mouseX, 0, elementWidth, 0, 2 * Math.PI);

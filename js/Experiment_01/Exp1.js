@@ -13,6 +13,10 @@
 var exp1_Specs = {
   id : "Experiment 01",
   name : "Fast Connecting Dots",
+  library : {
+    link : "P5js",
+    representation : "P5js"
+  },
   description: "As the dots fly, \
                 when close enough \
                 they will connect \

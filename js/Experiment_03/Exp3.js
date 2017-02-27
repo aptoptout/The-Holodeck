@@ -12,6 +12,10 @@
 var exp3_Specs = {
   id : "Experiment 03",
   name : "Constructing 3D image with data",
+  library : {
+    link : "Three.js",
+    representation : "Three.js"
+  },
   description: "Taking an 3D model and map data to its points.",
   repository: {
     link : "https://github.com/martijndeheer/The-Holodeck/blob/gh-pages/js/Experiment_03/Exp3.js",

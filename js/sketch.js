@@ -16,6 +16,7 @@ var showThis = new p5(exp1, 'c1');
 
 var idTag = document.getElementById("idTag");
 var nameTag = document.getElementById("name");
+var libraryTag = document.getElementById("library");
 var description = document.getElementById("description");
 var repository = document.getElementById("repository");
 
@@ -48,6 +49,8 @@ function getDescription() {
         case 'exp1':
             idTag.innerHTML = exp1_Specs.id;
             nameTag.innerHTML = exp1_Specs.name;
+            libraryTag.innerHTML = exp1_Specs.library.representation;
+            libraryTag.setAttribute("href", exp1_Specs.library.link);
             description.innerHTML = exp1_Specs.description;
             repository.innerHTML = exp1_Specs.repository.representation;
             repository.setAttribute("href", exp1_Specs.repository.link);
@@ -55,6 +58,8 @@ function getDescription() {
         case 'exp2':
             idTag.innerHTML = exp2_Specs.id;
             nameTag.innerHTML = exp2_Specs.name;
+            libraryTag.innerHTML = exp1_Specs.library.representation;
+            libraryTag.setAttribute("href", exp1_Specs.library.link);
             description.innerHTML = exp2_Specs.description;
             repository.innerHTML = exp2_Specs.repository.representation;
             repository.setAttribute("href", exp2_Specs.repository.link);
@@ -62,6 +67,8 @@ function getDescription() {
         case 'exp3':
             idTag.innerHTML = exp3_Specs.id;
             nameTag.innerHTML = exp3_Specs.name;
+            libraryTag.innerHTML = exp1_Specs.library.representation;
+            libraryTag.setAttribute("href", exp1_Specs.library.link);
             description.innerHTML = exp3_Specs.description;
             repository.innerHTML = exp3_Specs.repository.representation;
             repository.setAttribute("href", exp3_Specs.repository.link);
