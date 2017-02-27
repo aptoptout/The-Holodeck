@@ -29,4 +29,4 @@ var camera = new THREE.PerspectiveCamera( 75, elementWidth / elementHeight, 0.1,
 var renderer = new THREE.WebGLRenderer(); 
 
 renderer.setSize( elementWidth, elementHeight ); 
-document._element.appendChild( renderer.domElement );
+document.getElementById("c1").append( renderer.domElement );
