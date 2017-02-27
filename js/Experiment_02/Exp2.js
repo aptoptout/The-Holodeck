@@ -50,8 +50,12 @@ var exp2 = function(p) {
   };
 
   p.draw = function() {
-    var yoff = flying;
+    if (keyIsPressed === true) {
+      flying -= 0.05;
+    }
     
+    var yoff = flying;
+
     for (var y = 0; y < rows; y++) {
       var xoff = 0;
       for (var x = 0; x < cols; x++) {
@@ -78,13 +82,6 @@ var exp2 = function(p) {
       }
     }
   };
-
-  p.keyPressed = function() {
-    if (keyCode === UP_ARROW) {
-      flying -= 0.05;
-    }
-    return false;
-  }
 
 };
 

@@ -55,8 +55,8 @@ var exp3 = function(target) {
   function render() {
     requestAnimationFrame( render );
 
-    cube.rotation.x += 0.1;
-    cube.rotation.y += 0.1;
+    cube.rotation.x += 0.025;
+    cube.rotation.y += 0.025;
 
     renderer.render( scene, camera );
   }
@@ -65,5 +65,28 @@ var exp3 = function(target) {
   render();
   // END DRAW
   //
+
+  document.onkeydown = checkKey;
+
+  function checkKey(e) {
+    e = e || window.event;
+
+    if (e.keyCode == '38') {
+      // up arrow
+      camera.position.z++;
+    }
+    else if (e.keyCode == '40') {
+      // down arrow
+      camera.position.z--;
+    }
+    else if (e.keyCode == '37') {
+      // left arrow
+      camera.position.x--;
+    }
+    else if (e.keyCode == '39') {
+     // right arrow
+     camera.position.x++;
+    }
+  }
 
 };
