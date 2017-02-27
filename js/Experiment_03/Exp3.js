@@ -34,8 +34,12 @@ var exp3 = function(target) {
   var renderer = new THREE.WebGLRenderer(); 
 
   renderer.setSize(elementWidth, elementHeight); 
-  document.getElementById(target).append(renderer.domElement).setAttribute("id", "defaultCanvas0");
+  document.getElementById(target).appendChild(renderer.domElement);
+
   camera.position.z = 5;
+
+  var _canvas = document.getElementByTagName("canvas");
+  canvas.setAttribute("id", "defaultCanvas0");
 
   // Setting up what to draw (in this case a cube)
   var geometry = new THREE.BoxGeometry(1, 1, 1);
