@@ -63,6 +63,7 @@ var exp2 = function(p) {
 
   p.draw = function() {
     flying -= 0.1;
+
     var yoff = flying;
     for (var y = 0; y < rows; y++) {
       var xoff = 0;
@@ -75,21 +76,22 @@ var exp2 = function(p) {
 
     p.background(0);
 
-    var mapRotationX = p.map(p.mouseX, 0, elementWidth, 0, 2 * Math.PI);
-    var mapRotationY = p.map(p.mouseY, elementHeight, 0, 0, 2 * Math.PI);
+    // var mapRotationX = p.map(p.mouseX, 0, elementWidth, 0, 2 * Math.PI);
+    // var mapRotationY = p.map(p.mouseY, elementHeight, 0, 0, 2 * Math.PI);
 
     p.translate(0, 50, 0);
 
-    if((p.mouseX < p.width) && (p.mouseX > 0) && 
-       (p.mouseY < p.height) && (p.mouseY > 0)) {
-      p.rotateY(mapRotationX);
-    }
+    // if((p.mouseX < p.width) && (p.mouseX > 0) && 
+    //    (p.mouseY < p.height) && (p.mouseY > 0)) {
+    //   p.rotateY(mapRotationX);
+    // }
 
     p.rotateX(-Math.PI/3);
-    // p.ambientLight(255, 255, 255);
-    p.fill(200,200,200, 50);
+    p.ambientLight(255, 255, 255);
+    p.fill(200,200,200, 32);
 
     p.translate(-w/2, -h/2);
+    
     for (var y = 0; y < rows-1; y++) {
       p.beginShape(p.TRIANGLE_STRIP);
       for (var x = 0; x < cols; x++) {
