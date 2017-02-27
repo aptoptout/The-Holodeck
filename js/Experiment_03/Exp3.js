@@ -60,8 +60,8 @@ var exp3 = function(target) {
   function render() {
     requestAnimationFrame( render );
 
-    cube.rotation.x += 0.025;
-    cube.rotation.y += 0.025;
+    wireframe.rotation.x += 0.025;
+    wireframe.rotation.y += 0.025;
 
     renderer.render( scene, camera );
   }
