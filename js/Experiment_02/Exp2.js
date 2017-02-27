@@ -40,8 +40,6 @@ var exp2 = function(p) {
 
   p.setup = function() {
     p.createCanvas(elementWidth, elementHeight, p.WEBGL);
-    p.perspective(120, elementWidth / elementHeight, 1, 2000)
-    p.frameRate(30);
 
     for(var i = 0; i < total; i++) {
       _Boxes[i] = new boxShape(0, 0, z, 100);
@@ -62,7 +60,7 @@ var exp2 = function(p) {
   };
 
   p.draw = function() {
-    flying -= 0.1;
+    flying -= 0.2;
 
     var yoff = flying;
     for (var y = 0; y < rows; y++) {
@@ -91,7 +89,7 @@ var exp2 = function(p) {
     p.fill(200,200,200, 32);
 
     p.translate(-w/2, -h/2);
-    
+
     for (var y = 0; y < rows-1; y++) {
       p.beginShape(p.TRIANGLE_STRIP);
       for (var x = 0; x < cols; x++) {

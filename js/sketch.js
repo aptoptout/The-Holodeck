@@ -58,8 +58,8 @@ function getDescription() {
         case 'exp2':
             idTag.innerHTML = exp2_Specs.id;
             nameTag.innerHTML = exp2_Specs.name;
-            libraryTag.innerHTML = exp1_Specs.library.representation;
-            libraryTag.setAttribute("href", exp1_Specs.library.link);
+            libraryTag.innerHTML = exp2_Specs.library.representation;
+            libraryTag.setAttribute("href", exp2_Specs.library.link);
             description.innerHTML = exp2_Specs.description;
             repository.innerHTML = exp2_Specs.repository.representation;
             repository.setAttribute("href", exp2_Specs.repository.link);
@@ -67,8 +67,8 @@ function getDescription() {
         case 'exp3':
             idTag.innerHTML = exp3_Specs.id;
             nameTag.innerHTML = exp3_Specs.name;
-            libraryTag.innerHTML = exp1_Specs.library.representation;
-            libraryTag.setAttribute("href", exp1_Specs.library.link);
+            libraryTag.innerHTML = exp3_Specs.library.representation;
+            libraryTag.setAttribute("href", exp3_Specs.library.link);
             description.innerHTML = exp3_Specs.description;
             repository.innerHTML = exp3_Specs.repository.representation;
             repository.setAttribute("href", exp3_Specs.repository.link);
