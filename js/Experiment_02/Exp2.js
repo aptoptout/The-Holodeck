@@ -50,9 +50,9 @@ var exp2 = function(p) {
   };
 
   p.draw = function() {
-    if (p.keyIsPressed === true) {
+    // if (p.keyIsPressed === true) {
       flying -= 0.05;
-    }
+    // }
 
     var yoff = flying;
 
