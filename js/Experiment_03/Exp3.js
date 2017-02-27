@@ -31,6 +31,6 @@ var exp3 = function(target) {
   var renderer = new THREE.WebGLRenderer(); 
 
   renderer.setSize(elementWidth, elementHeight); 
-  document.getElementById("target").append(renderer.domElement);
+  document.getElementById(target).append(renderer.domElement);
 
 };
