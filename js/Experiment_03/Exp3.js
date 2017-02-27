@@ -26,11 +26,41 @@ var exp3_Specs = {
 
 var exp3 = function(target) {
 
+  //
+  // SETUP
+  // Setting up scene, camera and renderer type
   var scene = new THREE.Scene(); 
   var camera = new THREE.PerspectiveCamera( 75, elementWidth / elementHeight, 0.1, 1000 ); 
   var renderer = new THREE.WebGLRenderer(); 
 
   renderer.setSize(elementWidth, elementHeight); 
   document.getElementById(target).append(renderer.domElement);
+  camera.position.z = 5;
+
+  // Setting up what to draw (in this case a cube)
+  var geometry = new THREE.BoxGeometry(1, 1, 1);
+  var material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+  var cube = new THREE.Mesh(geometry, material);
+
+  scene.add(cube);
+  // END SETUP
+  //
+
+  //
+  // DRAW
+  // Setting up the draw loop
+  function render() {
+    requestAnimationFrame( render );
+
+    cube.rotation.x += 0.1;
+    cube.rotation.y += 0.1;
+
+    renderer.render( scene, camera );
+  }
+
+  // Calling the draw loop
+  render();
+  // END DRAW
+  //
 
 };
