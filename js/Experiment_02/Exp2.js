@@ -25,12 +25,8 @@ var exp2_Specs = {
 
 var exp2 = function(p) {
 
-  var _Boxes = [];
-  // var total = 50;
-  // var z = 0;
-
   var cols, rows;
-  var scl = 100;
+  var scl = 50;
   var w = elementWidth*1.5;
   var h = elementHeight*1.5;
 
@@ -41,30 +37,21 @@ var exp2 = function(p) {
   p.setup = function() {
     p.createCanvas(elementWidth, elementHeight, p.WEBGL);
 
-    // for(var i = 0; i < total; i++) {
-    //   _Boxes[i] = new boxShape(0, 0, z, 100);
-    //   z += 10;
-    //   // console.log(z);
-    // }
-
     cols = w / scl;
     rows = h/ scl;
 
     for (var x = 0; x < cols; x++) {
       terrain[x] = [];
-      _Boxes[x] = [];
       for (var y = 0; y < rows; y++) {
-        terrain[x][y] = 0; //specify a default value for now
-        _Boxes[x][y] = new boxShape(5);
+        terrain[x][y] = 0;
       }
     }
 
   };
 
   p.draw = function() {
-    flying -= 0.2;
-
     var yoff = flying;
+    
     for (var y = 0; y < rows; y++) {
       var xoff = 0;
       for (var x = 0; x < cols; x++) {
@@ -75,35 +62,29 @@ var exp2 = function(p) {
     }
 
     p.background(0);
-    p.translate(0, 50, 0);
+    p.translate(0, 50);
 
     p.rotateX(-Math.PI/3);
     p.ambientLight(255, 255, 255);
-    p.fill(200,200,200, 32);
+    p.fill(200,200,200, 64);
     p.translate(-w/2, -h/2);
 
     for (var y = 0; y < rows-1; y++) {
       for (var x = 0; x < cols; x++) {
         p.push();
         p.translate(0, 0, terrain[x][y]);
-        p.rect(x*scl-2.5, y*scl-2.5, 5, 5);
+        p.ellipse(x*scl-10, y*scl-10, 10, 10);
         p.pop();
       }
     }
-
-
   };
 
-  var boxShape = function(size) {
-    var halfSize = size/2;
-    var trueSize = size;
-
-    this.show = function() {
-
-      
+  p.keyPressed = function() {
+    if (keyCode === UP_ARROW) {
+      flying -= 0.05;
     }
-
-  };
+    return false;
+  }
 
 };
 
