@@ -25,7 +25,7 @@ var exp2_Specs = {
 
 var exp2 = function(p) {
 
-  // var _Boxes = new Array(100);
+  var _Boxes = [];
   // var total = 50;
   // var z = 0;
 
@@ -52,8 +52,10 @@ var exp2 = function(p) {
 
     for (var x = 0; x < cols; x++) {
       terrain[x] = [];
+      _Boxes[x] = [];
       for (var y = 0; y < rows; y++) {
         terrain[x][y] = 0; //specify a default value for now
+        _Boxes[x][y] = new boxShape(5);
       }
     }
 
@@ -73,48 +75,35 @@ var exp2 = function(p) {
     }
 
     p.background(0);
-
-    // var mapRotationX = p.map(p.mouseX, 0, elementWidth, 0, 2 * Math.PI);
-    // var mapRotationY = p.map(p.mouseY, elementHeight, 0, 0, 2 * Math.PI);
-
     p.translate(0, 50, 0);
-
-    // if((p.mouseX < p.width) && (p.mouseX > 0) && 
-    //    (p.mouseY < p.height) && (p.mouseY > 0)) {
-    //   p.rotateY(mapRotationX);
-    // }
 
     p.rotateX(-Math.PI/3);
     p.ambientLight(255, 255, 255);
     p.fill(200,200,200, 32);
-
     p.translate(-w/2, -h/2);
 
     for (var y = 0; y < rows-1; y++) {
-      p.beginShape(p.TRIANGLE_STRIP);
       for (var x = 0; x < cols; x++) {
-        p.vertex(x*scl, y*scl, terrain[x][y]);
-        // p.vertex(x*scl, (y+1)*scl, terrain[x][y+1]);
+        p.push();
+        translate(0, 0, terrain[x][y]);
+        p.rect(x*scl-halfSize, y*scl-halfSize, trueSize, trueSize);
+        p.pop();
       }
-      p.endShape();
     }
 
-    // for(var i = 0; i < 1; i++) {
-    //   _Boxes[i].show();
-    // }
+
   };
 
-  // var boxShape = function(centerPosX, centerPosY, centerPosZ, size) {
-  //   var halfSize = size/2;
-  //   var trueSize = size;
-  //   var centerPos = p.createVector(centerPosX, centerPosY, centerPosZ);
+  var boxShape = function(size) {
+    var halfSize = size/2;
+    var trueSize = size;
 
-  //   this.show = function() {
-  //     p.translate(0, 0, centerPos.z);
-  //     p.rect(centerPos.x-halfSize, centerPos.y-halfSize, trueSize, trueSize);
-  //   }
+    this.show = function() {
 
-  // };
+      
+    }
+
+  };
 
 };
 
