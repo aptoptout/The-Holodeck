@@ -42,10 +42,15 @@ var exp3 = function(target) {
 
   // Setting up what to draw (in this case a cube)
   var geometry = new THREE.BoxGeometry(1, 1, 1);
-  var material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-  var cube = new THREE.Mesh(geometry, material);
+  // Setting up the wireframe
+  var wireframeGeometry = THREE.EdgesGeometry(geometry);
+  var mat = new THREE.LineBasicMaterial({ color: 0xffffff, linewidth: 2 });
+  var wireframe = new THREE.LineSegments(geo, mat);
 
-  scene.add(cube);
+  // var material = new THREE.MeshBasicMaterial( {color: 0x00ff00, wireframe: true } );
+  // var cube = new THREE.Mesh(geometry, material);
+
+  scene.add(wireframe);
   // END SETUP
   //
 
