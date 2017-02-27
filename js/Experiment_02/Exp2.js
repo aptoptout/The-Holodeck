@@ -25,14 +25,14 @@ var exp2_Specs = {
 
 var exp2 = function(p) {
 
-  var _Boxes = new Array(100);
-  var total = 50;
-  var z = 0;
+  // var _Boxes = new Array(100);
+  // var total = 50;
+  // var z = 0;
 
   var cols, rows;
   var scl = 100;
-  var w = elementWidth*1.2;
-  var h = elementHeight*1.2;
+  var w = elementWidth*1.5;
+  var h = elementHeight*1.5;
 
   var flying = 0;
 
@@ -41,11 +41,11 @@ var exp2 = function(p) {
   p.setup = function() {
     p.createCanvas(elementWidth, elementHeight, p.WEBGL);
 
-    for(var i = 0; i < total; i++) {
-      _Boxes[i] = new boxShape(0, 0, z, 100);
-      z += 10;
-      console.log(z);
-    }
+    // for(var i = 0; i < total; i++) {
+    //   _Boxes[i] = new boxShape(0, 0, z, 100);
+    //   z += 10;
+    //   // console.log(z);
+    // }
 
     cols = w / scl;
     rows = h/ scl;
@@ -66,7 +66,7 @@ var exp2 = function(p) {
     for (var y = 0; y < rows; y++) {
       var xoff = 0;
       for (var x = 0; x < cols; x++) {
-        terrain[x][y] = p.map(p.noise(xoff, yoff), 0, 1, -100, 100);
+        terrain[x][y] = p.map(p.noise(xoff, yoff), 0, 1, -200, 200);
         xoff += 0.2;
       }
       yoff += 0.2;
@@ -104,17 +104,17 @@ var exp2 = function(p) {
     // }
   };
 
-  var boxShape = function(centerPosX, centerPosY, centerPosZ, size) {
-    var halfSize = size/2;
-    var trueSize = size;
-    var centerPos = p.createVector(centerPosX, centerPosY, centerPosZ);
+  // var boxShape = function(centerPosX, centerPosY, centerPosZ, size) {
+  //   var halfSize = size/2;
+  //   var trueSize = size;
+  //   var centerPos = p.createVector(centerPosX, centerPosY, centerPosZ);
 
-    this.show = function() {
-      p.translate(0, 0, centerPos.z);
-      p.rect(centerPos.x-halfSize, centerPos.y-halfSize, trueSize, trueSize);
-    }
+  //   this.show = function() {
+  //     p.translate(0, 0, centerPos.z);
+  //     p.rect(centerPos.x-halfSize, centerPos.y-halfSize, trueSize, trueSize);
+  //   }
 
-  };
+  // };
 
 };
 
