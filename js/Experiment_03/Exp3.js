@@ -11,12 +11,12 @@
 
 var exp3_Specs = {
   id : "Experiment 03",
-  name : "Constructing 3D image with data",
+  name : "Starting with Threejs",
   library : {
     link : "Three.js",
     representation : "Threejs"
   },
-  description: "Taking an 3D model and map data to its points.",
+  description: "As I've enjoyed the short and quick acquaintance with P5js I've also noted its current short comings. At least of what I was hoping to do with it. These experiments all have a root in the visuals made by Symbiotic Spark during the COMPOSITION 01 show and have mostly been made in Processing with the P3D renderer. WEBGL in P5js is far under developed comparing this with the P3D renderer in Processing. Threejs is a library specifically for WEBGL so therefor I've decided to also look into Threejs.",
   repository: {
     link : "https://github.com/martijndeheer/The-Holodeck/blob/gh-pages/js/Experiment_03/Exp3.js",
     representation: "See Experiment 03's code"

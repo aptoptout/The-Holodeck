@@ -11,12 +11,12 @@
 
 var exp2_Specs = {
   id : "Experiment 02",
-  name : "Navigational 3D space",
+  name : "Navigational 3D landscape",
   library : {
     link : "P5js",
     representation : "P5js"
   },
-  description: "Navigating through 3D space with mouse and keys.",
+  description: "Navigating through a 3D landscape with the mouse as the navigational tool. To start it takes quite a lot of time to load all the points.",
   repository: {
     link : "https://github.com/martijndeheer/The-Holodeck/blob/gh-pages/js/Experiment_02/Exp2.js",
     representation: "See Experiment 02's code"
