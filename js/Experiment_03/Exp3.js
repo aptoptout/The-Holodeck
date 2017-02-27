@@ -45,7 +45,7 @@ var exp3 = function(target) {
   // Setting up the wireframe
   var wireframeGeometry = new THREE.EdgesGeometry(geometry);
   var mat = new THREE.LineBasicMaterial({ color: 0xffffff, linewidth: 2 });
-  var wireframe = new THREE.LineSegments(geo, mat);
+  var wireframe = new THREE.LineSegments(wireframeGeometry, mat);
 
   // var material = new THREE.MeshBasicMaterial( {color: 0x00ff00, wireframe: true } );
   // var cube = new THREE.Mesh(geometry, material);
