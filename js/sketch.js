@@ -113,3 +113,13 @@ getDescription();
 var parent = document.getElementById('expIndex');
 parent.addEventListener('click', showThisExperiment);
 
+
+// Add resize function
+//
+// window.addEventListener( 'resize', onWindowResize, false );
+// function onWindowResize() {
+//   camera.aspect = window.innerWidth / window.innerHeight;
+//   camera.updateProjectionMatrix();
+//   renderer.setSize( window.innerWidth, window.innerHeight );
+// }
+

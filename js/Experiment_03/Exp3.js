@@ -27,7 +27,7 @@ var exp3_Specs = {
 var exp3 = function(target) {
 
   var scene, camera, renderer;
-  var wireframe;
+  var wireframe, group;
 
   //
   // Calling the functions to execute
@@ -51,18 +51,49 @@ var exp3 = function(target) {
 
     var _canvas = document.getElementsByTagName("canvas")[0].setAttribute("id", "defaultCanvas0");
 
-    // Setting up what to draw (in this case a cube)
-    var geometry = new THREE.BoxGeometry(1, 1, 1);
+    group = new THREE.group();
+
+    // Setting up the geometry to work with
+    var geometry = new THREE.BoxGeometry(1, 1, 1, 10, 10, 10);
+    var vertices = geometry.vertices;
+    var verticesLength = vertices.length;
+
+    var positions = new Float32Array( vertices.length * 3 );
+    var colors = new Float32Array( vertices.length * 3 );
+    var sizes = new Float32Array( vertices.length );
+
+    var vertex;
+    var color = new THREE.color();
+
+    for (var i = 0; i < verticesLength; i++) {
+
+      vertex = vertices[ i ];
+      vertex.toArray( positions, i * 3 );
+      color.setHSL( 0.6, 0.75, 0.25 + vertex.y / ( 2 * 100 ) );
+      color.toArray( colors, i * 3 );
+      sizes[ i ] = i < verticesLength ? 10 : 40;
+
+    }
+
+    var bufGeometry = new THREE.BufferGeometry();
+    bufGeometry.addAttribute( 'position', new THREE.BufferAttribute( positions, 3 ) );
+    bufGeometry.addAttribute( 'size', new THREE.BufferAttribute( sizes, 1 ) );
+    bufGeometry.addAttribute( 'ca', new THREE.BufferAttribute( colors, 3 ) );
+
+    group.add(bufGeometry);
+
     // Setting up the wireframe
     var wireframeGeometry = new THREE.EdgesGeometry(geometry);
     var mat = new THREE.LineBasicMaterial({ color: 0xffffff, linewidth: 2 });
     
     wireframe = new THREE.LineSegments(wireframeGeometry, mat);
+    group.add(wireframe);
+
 
     // var material = new THREE.MeshBasicMaterial( {color: 0x00ff00, wireframe: true } );
     // var cube = new THREE.Mesh(geometry, material);
 
-    scene.add(wireframe);
+    scene.add(group);
   }
   // END SETUP
   //
