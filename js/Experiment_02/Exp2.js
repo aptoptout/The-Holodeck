@@ -27,8 +27,8 @@ var exp2 = function(p) {
 
   var cols, rows;
   var scl = 75;
-  var w = elementWidth*1.5;
-  var h = elementHeight*1.5;
+  var w = elementWidth;
+  var h = elementHeight;
 
   var flying = 0;
 
@@ -51,7 +51,7 @@ var exp2 = function(p) {
 
   p.draw = function() {
     if (p.mouseIsPressed) {
-      flying -= 0.05;
+      flying -= 0.025;
     }
 
     var yoff = flying;
@@ -59,10 +59,10 @@ var exp2 = function(p) {
     for (var y = 0; y < rows; y++) {
       var xoff = 0;
       for (var x = 0; x < cols; x++) {
-        terrain[x][y] = p.map(p.noise(xoff, yoff), 0, 1, -200, 200);
-        xoff += 0.2;
+        terrain[x][y] = p.map(p.noise(xoff, yoff), 0, 1, -100, 100);
+        xoff += 0.1;
       }
-      yoff += 0.2;
+      yoff += 0.1;
     }
 
     p.background(0);
@@ -70,28 +70,20 @@ var exp2 = function(p) {
 
     p.rotateX(-Math.PI/3);
     p.ambientLight(255, 255, 255);
-    p.fill(200,200,200, 64);
+    p.fill(255, 255, 255, 85);
     p.translate(-w/2, -h/2);
 
     for (var y = 0; y < rows-1; y++) {
       for (var x = 0; x < cols; x++) {
         p.push();
         p.translate(0, 0, terrain[x][y]);
-        p.ellipse(x*scl-10, y*scl-10, 10, 10);
+        p.ellipse(x*scl-2.5, y*scl-2.5, 5, 5);
         p.pop();
       }
     }
   };
 
 };
-
-
-
-
-
-
-
-
 
 
 
