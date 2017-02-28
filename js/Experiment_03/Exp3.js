@@ -30,6 +30,13 @@ var exp3 = function(target) {
   var wireframe;
 
   //
+  // Calling the functions to execute
+  init();
+  animate();
+  // The building of the sketch is down below
+  //
+
+  //
   // SETUP
   function init() {
     // Setting up scene, camera and renderer type
