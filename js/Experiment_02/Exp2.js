@@ -27,8 +27,8 @@ var exp2 = function(p) {
 
   var cols, rows;
   var scl = 50;
-  var w = elementWidth/1.5;
-  var h = elementHeight/1.5;
+  var w = elementWidth;
+  var h = elementHeight/1.2;
 
   var flying = 0;
 
@@ -66,7 +66,7 @@ var exp2 = function(p) {
     }
 
     p.background(0);
-    p.translate(0, 50);
+    p.translate(0, 100);
 
     p.rotateX(-Math.PI/3);
     p.ambientLight(255, 255, 255);
