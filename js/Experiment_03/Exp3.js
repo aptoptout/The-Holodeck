@@ -26,51 +26,65 @@ var exp3_Specs = {
 
 var exp3 = function(target) {
 
+  var scene, camera, renderer;
+  var wireframe;
+
   //
   // SETUP
-  // Setting up scene, camera and renderer type
-  var scene = new THREE.Scene(); 
-  var camera = new THREE.PerspectiveCamera( 75, elementWidth / elementHeight, 0.1, 1000 ); 
-  var renderer = new THREE.WebGLRenderer(); 
+  function init() {
+    // Setting up scene, camera and renderer type
+    scene = new THREE.Scene(); 
+    camera = new THREE.PerspectiveCamera( 75, elementWidth / elementHeight, 0.1, 1000 ); 
+    renderer = new THREE.WebGLRenderer(); 
 
-  renderer.setSize(elementWidth, elementHeight); 
-  document.getElementById(target).appendChild(renderer.domElement);
+    renderer.setSize(elementWidth, elementHeight); 
+    document.getElementById(target).appendChild(renderer.domElement);
 
-  camera.position.z = 5;
+    camera.position.z = 5;
 
-  var _canvas = document.getElementsByTagName("canvas")[0].setAttribute("id", "defaultCanvas0");
+    var _canvas = document.getElementsByTagName("canvas")[0].setAttribute("id", "defaultCanvas0");
 
-  // Setting up what to draw (in this case a cube)
-  var geometry = new THREE.BoxGeometry(1, 1, 1);
-  // Setting up the wireframe
-  var wireframeGeometry = new THREE.EdgesGeometry(geometry);
-  var mat = new THREE.LineBasicMaterial({ color: 0xffffff, linewidth: 2 });
-  var wireframe = new THREE.LineSegments(wireframeGeometry, mat);
+    // Setting up what to draw (in this case a cube)
+    var geometry = new THREE.BoxGeometry(1, 1, 1);
+    // Setting up the wireframe
+    var wireframeGeometry = new THREE.EdgesGeometry(geometry);
+    var mat = new THREE.LineBasicMaterial({ color: 0xffffff, linewidth: 2 });
+    
+    wireframe = new THREE.LineSegments(wireframeGeometry, mat);
 
-  // var material = new THREE.MeshBasicMaterial( {color: 0x00ff00, wireframe: true } );
-  // var cube = new THREE.Mesh(geometry, material);
+    // var material = new THREE.MeshBasicMaterial( {color: 0x00ff00, wireframe: true } );
+    // var cube = new THREE.Mesh(geometry, material);
 
-  scene.add(wireframe);
+    scene.add(wireframe);
+  }
   // END SETUP
   //
 
   //
   // DRAW
   // Setting up the draw loop
-  function render() {
-    requestAnimationFrame( render );
+  function animate() {
+    requestAnimationFrame(animate);
 
+    // Calling the draw loop
+    render();
+  }
+  // END DRAW
+  //
+
+  //
+  // RENDER
+  // Setting up what to render and possibly update every frame
+  function render() {
+    
     wireframe.rotation.x += 0.025;
     wireframe.rotation.y += 0.025;
 
     renderer.render( scene, camera );
   }
-
-  // Calling the draw loop
-  render();
-  // END DRAW
+  
   //
-
+  // INTERACTION
   document.onkeydown = checkKey;
 
   function checkKey(e) {
