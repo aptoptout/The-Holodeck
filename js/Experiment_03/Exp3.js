@@ -51,7 +51,7 @@ var exp3 = function(target) {
 
     var _canvas = document.getElementsByTagName("canvas")[0].setAttribute("id", "defaultCanvas0");
 
-    group = new THREE.group();
+    group = new Three.Group();
 
     // Setting up the geometry to work with
     var geometry = new THREE.BoxGeometry(1, 1, 1, 10, 10, 10);
