@@ -26,9 +26,9 @@ var exp2_Specs = {
 var exp2 = function(p) {
 
   var cols, rows;
-  var scl = 75;
-  var w = elementWidth;
-  var h = elementHeight;
+  var scl = 50;
+  var w = elementWidth/1.5;
+  var h = elementHeight/1.5;
 
   var flying = 0;
 
@@ -59,7 +59,7 @@ var exp2 = function(p) {
     for (var y = 0; y < rows; y++) {
       var xoff = 0;
       for (var x = 0; x < cols; x++) {
-        terrain[x][y] = p.map(p.noise(xoff, yoff), 0, 1, -100, 100);
+        terrain[x][y] = p.map(p.noise(xoff, yoff), 0, 1, -100, 200);
         xoff += 0.1;
       }
       yoff += 0.1;
