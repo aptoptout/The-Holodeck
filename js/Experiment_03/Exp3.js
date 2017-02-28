@@ -63,7 +63,7 @@ var exp3 = function(target) {
     var sizes = new Float32Array( vertices.length );
 
     var vertex;
-    var color = new THREE.color();
+    var color = new THREE.Color();
 
     for (var i = 0; i < verticesLength; i++) {
 
