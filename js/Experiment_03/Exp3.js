@@ -51,8 +51,6 @@ var exp3 = function(target) {
 
     var _canvas = document.getElementsByTagName("canvas")[0].setAttribute("id", "defaultCanvas0");
 
-    group = new THREE.Group();
-
     // Setting up the geometry to work with
     var geometry = new THREE.BoxGeometry(1, 1, 1, 10, 10, 10);
     var vertices = geometry.vertices;
@@ -80,20 +78,19 @@ var exp3 = function(target) {
     bufGeometry.addAttribute( 'size', new THREE.BufferAttribute( sizes, 1 ) );
     bufGeometry.addAttribute( 'ca', new THREE.BufferAttribute( colors, 3 ) );
 
-    group.add(bufGeometry);
+    group = new THREE.Points(bufGeometry);
+    scene.add(group);
 
     // Setting up the wireframe
     var wireframeGeometry = new THREE.EdgesGeometry(geometry);
     var mat = new THREE.LineBasicMaterial({ color: 0xffffff, linewidth: 2 });
     
     wireframe = new THREE.LineSegments(wireframeGeometry, mat);
-    group.add(wireframe);
-
 
     // var material = new THREE.MeshBasicMaterial( {color: 0x00ff00, wireframe: true } );
     // var cube = new THREE.Mesh(geometry, material);
 
-    scene.add(group);
+    scene.add(wireframe);
   }
   // END SETUP
   //
