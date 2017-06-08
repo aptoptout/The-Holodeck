@@ -39,12 +39,13 @@ var exp4 = function(p) {
 
   p.draw = function() {
     p.background(255);
-    p.image(img, 0, 0);
+    // p.image(img, 0, 0);
+
     img.loadPixels();
 
-    for (var y = 0; y < elementHeight; y += smallPoint) {
-      for (var x = 0; x < elementWidth; x += smallPoint) {
-        var i = y * elementWidth + x;
+    for (var y = 0; y < img.width; y += smallPoint) {
+      for (var x = 0; x < img.height; x += smallPoint) {
+        var i = y * img.width + x;
         var darkness = (255 - img.pixels[i*4]) / 255;
         var radius = smallPoint * darkness;
         p.ellipse(x, y, radius, radius);
