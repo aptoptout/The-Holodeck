@@ -29,7 +29,7 @@ var exp4 = function(p) {
   p.setup = function() {
     p.createCanvas(elementWidth, elementHeight);
     smallPoint = 4;
-    img = p.loadImage("https://martijndeheer.github.io/The-Holodeck/js/Experiment_04/assets/moonwalk.jpg");
+    img = p.loadImage("https://martijndeheer.github.io/The-Holodeck/js/Experiment_04/assets/CoverHero_M_1x.jpg");
     // p.imageMode(p.CENTER);
     p.stroke(127);
     p.fill(255);
