@@ -26,9 +26,9 @@ var exp2_Specs = {
 var exp2 = function(p) {
 
   var cols, rows;
-  var scl = 20;
-  var w = elementWidth;
-  var h = elementHeight/1.2;
+  var scl = 30;
+  var w = elementWidth/1.5;
+  var h = elementHeight/1.8;
 
   var flying = 0;
 
@@ -70,18 +70,17 @@ var exp2 = function(p) {
     p.translate(0, 50);
 
     p.rotateX(-Math.PI/3);
-    p.fill(255, 255, 255, 85);
+    p.fill(255, 255, 255);
     p.translate(-w/2, -h/2);
 
     for (var y = 0; y < rows-1; y++) {
-      p.beginShape(p.TRIANGLE_STRIP);
       for (var x = 0; x < cols; x++) {
-        p.vertex(x*scl, y*scl, terrain[x][y]);
-        p.vertex(x*scl, (y+1)*scl, terrain[x][y+1]);
+        p.push();
+        p.translate(0, 0, terrain[x][y]);
+        p.ellipse(x*scl-2.5, y*scl-2.5, 5, 5);
+        p.pop();
       }
-      p.endShape();
     }
-
   };
 
   //
