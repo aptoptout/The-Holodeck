@@ -47,7 +47,7 @@ var exp4 = function(p) {
         var i = y * elementWidth + x;
         var darkness = (255 - img.pixels[i*4]) / 255;
         var radius = stepSize * darkness;
-        ellipse(x, y, radius, radius);
+        p.ellipse(x, y, radius, radius);
       }
     }
   }
