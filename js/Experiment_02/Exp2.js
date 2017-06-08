@@ -34,14 +34,9 @@ var exp2 = function(p) {
 
   var terrain = [];
 
-  p.preload = function() {
-    for (var x = 0; x < cols; x++) {
-      terrain[x] = [];
-      for (var y = 0; y < rows; y++) {
-        terrain[x][y] = 0;
-      }
-    }
-  }
+  // p.preload = function() {
+    
+  // }
 
   p.setup = function() {
     p.createCanvas(elementWidth, elementHeight, p.WEBGL);
@@ -49,6 +44,12 @@ var exp2 = function(p) {
     cols = w / scl;
     rows = h/ scl;
 
+    for (var x = 0; x < cols; x++) {
+      terrain[x] = [];
+      for (var y = 0; y < rows; y++) {
+        terrain[x][y] = 0;
+      }
+    }
   };
 
   p.draw = function() {

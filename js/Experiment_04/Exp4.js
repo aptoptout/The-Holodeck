@@ -23,7 +23,7 @@ var exp4 = function(p) {
   var smallPoint, largePoint;
 
   p.preload = function() {
-    img = p.loadImage("assets/moonwalk.jpg");
+    img = p.loadImage("https://martijndeheer.github.io/The-Holodeck/js/Experiment_04/assets/moonwalk.jpg");
   }
 
   p.setup = function() {
