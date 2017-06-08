@@ -34,18 +34,20 @@ var exp2 = function(p) {
 
   var terrain = [];
 
-  p.setup = function() {
-    p.createCanvas(elementWidth, elementHeight, p.WEBGL);
-
-    cols = w / scl;
-    rows = h/ scl;
-
+  p.preload = function() {
     for (var x = 0; x < cols; x++) {
       terrain[x] = [];
       for (var y = 0; y < rows; y++) {
         terrain[x][y] = 0;
       }
     }
+  }
+
+  p.setup = function() {
+    p.createCanvas(elementWidth, elementHeight, p.WEBGL);
+
+    cols = w / scl;
+    rows = h/ scl;
 
   };
 
@@ -66,18 +68,18 @@ var exp2 = function(p) {
     }
 
     p.background(0);
+    p.strokeWidth(5);
+    p.stroke(255, 85);
     p.translate(0, 100);
 
     p.rotateX(-Math.PI/3);
-    p.ambientLight(255, 255, 255);
-    p.fill(255, 255, 255, 85);
     p.translate(-w/2, -h/2);
 
     for (var y = 0; y < rows-1; y++) {
       for (var x = 0; x < cols; x++) {
         p.push();
         p.translate(0, 0, terrain[x][y]);
-        p.ellipse(x*scl-2.5, y*scl-2.5, 5, 5);
+        p.point(x,y);
         p.pop();
       }
     }
