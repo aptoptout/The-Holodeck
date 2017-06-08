@@ -26,7 +26,7 @@ var exp2_Specs = {
 var exp2 = function(p) {
 
   var cols, rows;
-  var scl = 20;
+  var scl = 15;
   var w = elementWidth/1.5;
   var h = elementHeight/1.8;
 
@@ -59,7 +59,11 @@ var exp2 = function(p) {
     for (var y = 0; y < rows; y++) {
       var xoff = 0;
       for (var x = 0; x < cols; x++) {
-        terrain[x][y] = p.map(p.noise(xoff, yoff), 0, 1, -100, 200);
+        if(x > ((cols/5)*2) && x < ((cols/5)*3)){
+          terrain[x][y] = 0;
+        } else {
+          terrain[x][y] = p.map(p.noise(xoff, yoff), 0, 1, -100, 200);
+        }
         xoff += 0.2;
       }
       yoff += 0.2;
@@ -69,7 +73,7 @@ var exp2 = function(p) {
     p.translate(0, 50);
 
     p.rotateX(-Math.PI/3.5);
-    p.fill(255, 255, 255);
+    p.fill(255, 255, 255, 85);
     p.translate(-w/2, -h/2);
 
     for (var y = 0; y < rows-1; y++) {
