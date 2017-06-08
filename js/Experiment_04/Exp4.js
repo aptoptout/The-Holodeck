@@ -28,7 +28,7 @@ var exp4 = function(p) {
 
   p.setup = function() {
     p.createCanvas(elementWidth, elementHeight);
-    smallPoint = 5;
+    smallPoint = 4;
 
     // p.imageMode(p.CENTER);
     p.noStroke();
@@ -41,14 +41,15 @@ var exp4 = function(p) {
     img.loadPixels();
     var leftSpace = elementWidth - img.width;
     var topSpace = elementHeight - img.height;
-    p.translate(leftSpace/2, topSpace/2);
+
+    p.translate(leftSpace, topSpace);
     for (var y = 0; y < img.width; y += smallPoint) {
       for (var x = 0; x < img.height; x += smallPoint) {
         var i = y * img.width + x;
         var darkness = (255 - img.pixels[i*4]) / 255;
         var radius = smallPoint * darkness;
 
-        if(radius < 0.65) {
+        if(radius < 0.75) {
           p.ellipse(x, y, 1, 1);
         }
       }

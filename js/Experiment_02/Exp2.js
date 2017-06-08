@@ -26,7 +26,7 @@ var exp2_Specs = {
 var exp2 = function(p) {
 
   var cols, rows;
-  var scl = 15;
+  var scl = 25;
   var w = elementWidth/1.5;
   var h = elementHeight/1.8;
 
