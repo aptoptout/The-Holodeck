@@ -50,7 +50,7 @@ var exp2 = function(p) {
   };
 
   p.draw = function() {
-    if (p.keyIsPressed) {
+    if (p.mouseIsPressed) {
       flying -= 0.025;
     }
 

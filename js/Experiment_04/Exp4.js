@@ -48,7 +48,7 @@ var exp4 = function(p) {
         var darkness = (255 - img.pixels[i*4]) / 255;
         var radius = smallPoint * darkness;
 
-        if(radius < 0.5) {
+        if(radius < 0.65) {
           p.ellipse(x, y, 1, 1);
         }
       }
