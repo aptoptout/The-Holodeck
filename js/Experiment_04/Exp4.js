@@ -45,9 +45,11 @@ var exp4 = function(p) {
       for (var x = 0; x < img.height; x += smallPoint) {
         var i = y * img.width + x;
         var darkness = (255 - img.pixels[i*4]) / 255;
-        p.print(darkness);
         var radius = smallPoint * darkness;
-        p.ellipse(x, y, radius, radius);
+
+        if(radius < 0.25) {
+          p.ellipse(x, y, 0.2, 0.2);
+        }
       }
     }
   }
