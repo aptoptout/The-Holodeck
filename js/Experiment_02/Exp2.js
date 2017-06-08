@@ -85,19 +85,13 @@ var exp2 = function(p) {
 
   //
   // INTERACTION
-  document.onkeydown = checkKey;
-
-  function checkKey(e) {
-    e = e || window.event;
-
-    if (e.keyCode == '38') {
-      // up arrow
-      flying -= 0.1;
+  p.keyPressed = function() {
+    if (p.keyCode == p.UP_ARROW) {
+      flying -= 0.05;
+    } else if (p.keyCode == p.DOWN_ARROW) {
+      flying += 0.05;
     }
-    else if (e.keyCode == '40') {
-      // down arrow
-      flying += 0.1;
-    }
+    return false; // prevent default
   }
 
 };
