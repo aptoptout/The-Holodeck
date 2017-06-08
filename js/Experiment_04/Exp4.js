@@ -42,8 +42,8 @@ var exp4 = function(p) {
     p.background(255);
     img.loadPixels();
     var stepSize = p.round(p.constrain(p.mouseX / 8, 6, 32));
-    for (var y = 0; y < height; y += stepSize) {
-      for (var x = 0; x < width; x += stepSize) {
+    for (var y = 0; y < elementHeight; y += stepSize) {
+      for (var x = 0; x < elementWidth; x += stepSize) {
         var i = y * elementWidth + x;
         var darkness = (255 - img.pixels[i*4]) / 255;
         var radius = stepSize * darkness;
