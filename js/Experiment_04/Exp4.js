@@ -42,7 +42,7 @@ var exp4 = function(p) {
     var leftSpace = elementWidth - img.width;
     var topSpace = elementHeight - img.height;
 
-    p.translate(leftSpace, topSpace);
+    p.translate(500, topSpace);
     for (var y = 0; y < img.width; y += smallPoint) {
       for (var x = 0; x < img.height; x += smallPoint) {
         var i = y * img.width + x;
