@@ -48,7 +48,7 @@ var exp4 = function(p) {
         var radius = smallPoint * darkness;
 
         if(radius < 0.25) {
-          p.ellipse(x, y, 1, 1;
+          p.ellipse(x, y, 1, 1);
         }
       }
     }
