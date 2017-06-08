@@ -37,13 +37,12 @@ var exp4 = function(p) {
 
   p.draw = function() {
     p.background(0);
-    // p.image(img, 0, 0);
+    p.image(img, 0, 0);
     img.loadPixels();
     var leftSpace = elementWidth - img.width;
     var topSpace = elementHeight - img.height;
-    p.print(leftSpace, topSpace);
-
-    p.translate(leftSpace, topSpace);
+    // p.print(leftSpace, topSpace);
+    // p.translate(leftSpace, topSpace);
     for (var y = 0; y < img.width; y += smallPoint) {
       for (var x = 0; x < img.height; x += smallPoint) {
         var i = y * img.width + x;
