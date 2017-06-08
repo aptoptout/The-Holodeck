@@ -52,7 +52,7 @@ var exp4 = function(p) {
 
         if(radius < 0.75) {
           p.vertex(x, y);
-          p.vertex(x, y+1);
+          // p.vertex(x, y+1);
           p.ellipse(x, y, 1, 1);
         }
       }
