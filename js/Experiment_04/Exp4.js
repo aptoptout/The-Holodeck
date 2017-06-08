@@ -53,7 +53,7 @@ var exp4 = function(p) {
         if(radius < 0.95) {
           // p.vertex(x, y);
           // p.vertex(x, y+1);
-          p.ellipse(x, y, radius, radius);
+          p.ellipse(x, y, 4, 4);
         }
       }
       // p.endShape();
