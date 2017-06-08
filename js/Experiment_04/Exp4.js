@@ -37,7 +37,7 @@ var exp4 = function(p) {
 
   p.draw = function() {
     p.background(0);
-    p.image(img, 0, 0);
+    // p.image(img, 0, 0);
     img.loadPixels();
     var leftSpace = elementWidth - img.width;
     var topSpace = elementHeight - img.height;
