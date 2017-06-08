@@ -26,7 +26,7 @@ var exp2_Specs = {
 var exp2 = function(p) {
 
   var cols, rows;
-  var scl = 30;
+  var scl = 20;
   var w = elementWidth/1.5;
   var h = elementHeight/1.8;
 
@@ -54,7 +54,7 @@ var exp2 = function(p) {
     //   flying -= 0.025;
     // }
 
-    flying -= 0.005;
+    // flying -= 0.005;
     var yoff = flying;
 
     for (var y = 0; y < rows; y++) {
@@ -69,7 +69,7 @@ var exp2 = function(p) {
     p.background(0);
     p.translate(0, 50);
 
-    p.rotateX(-Math.PI/3);
+    p.rotateX(-Math.PI/3.5);
     p.fill(255, 255, 255);
     p.translate(-w/2, -h/2);
 
@@ -77,7 +77,7 @@ var exp2 = function(p) {
       for (var x = 0; x < cols; x++) {
         p.push();
         p.translate(0, 0, terrain[x][y]);
-        p.ellipse(x*scl-2.5, y*scl-2.5, 5, 5);
+        p.ellipse(x*scl-2.5, y*scl-2.5, 3, 3);
         p.pop();
       }
     }
@@ -92,11 +92,11 @@ var exp2 = function(p) {
 
     if (e.keyCode == '38') {
       // up arrow
-      flying -= 0.025;
+      flying -= 0.1;
     }
     else if (e.keyCode == '40') {
       // down arrow
-      flying += 0.025;
+      flying += 0.1;
     }
   }
 
