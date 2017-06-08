@@ -31,7 +31,7 @@ var exp4 = function(p) {
     smallPoint = 4;
 
     // p.imageMode(p.CENTER);
-    p.noStroke();
+    p.stroke(127);
     p.fill(255);
   }
 
@@ -50,11 +50,11 @@ var exp4 = function(p) {
         var darkness = (255 - img.pixels[i*4]) / 255;
         var radius = smallPoint * darkness;
 
-        // if(radius < 0.75) {
+        if(radius < 0.75) {
           p.vertex(x, y);
           p.vertex(x, y+1);
           p.ellipse(x, y, 1, 1);
-        // }
+        }
       }
       p.endShape();
     }
