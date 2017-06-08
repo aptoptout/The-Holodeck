@@ -67,7 +67,7 @@ var exp3 = function(target) {
 
       vertex = vertices[ i ];
       vertex.toArray( positions, i * 3 );
-      color.setHSL( 0.6, 0.75, 0.25 + vertex.y / ( 2 * 100 ) );
+      //color.setHSL( 0.6, 0.75, 0.25 + vertex.y / ( 2 * 100 ) );
       color.toArray( colors, i * 3 );
       sizes[ i ] = i < verticesLength ? 10 : 40;
 
@@ -79,7 +79,7 @@ var exp3 = function(target) {
     bufGeometry.addAttribute( 'ca', new THREE.BufferAttribute( colors, 3 ) );
 
     group = new THREE.Points(bufGeometry);
-    scene.add(group);
+    // scene.add(group);
 
     // Setting up the wireframe
     var wireframeGeometry = new THREE.EdgesGeometry(geometry);
