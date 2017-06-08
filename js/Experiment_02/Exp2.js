@@ -76,10 +76,10 @@ var exp2 = function(p) {
     for (var y = 0; y < rows-1; y++) {
       p.beginShape(p.TRIANGLE_STRIP);
       for (var x = 0; x < cols; x++) {
-        vertex(x*scl, y*scl, terrain[x][y]);
-        vertex(x*scl, (y+1)*scl, terrain[x][y+1]);
+        p.vertex(x*scl, y*scl, terrain[x][y]);
+        p.vertex(x*scl, (y+1)*scl, terrain[x][y+1]);
       }
-      endShape();
+      p.endShape();
     }
 
   };
