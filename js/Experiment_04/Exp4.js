@@ -48,12 +48,12 @@ var exp4 = function(p) {
       for (var x = 0; x < img.width; x += smallPoint) {
         var i = y * img.width + x;
         var darkness = (255 - img.pixels[i*4]) / 255;
-        var radius = smallPoint * darkness;
+        var radius = (smallPoint*2) * darkness;
 
         if(radius < 0.75) {
           p.vertex(x, y);
           // p.vertex(x, y+1);
-          p.ellipse(x, y, 1, 1);
+          p.ellipse(x, y, radius, radius);
         }
       }
       p.endShape();
