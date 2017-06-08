@@ -50,10 +50,10 @@ var exp4 = function(p) {
         var darkness = (255 - img.pixels[i*4]) / 255;
         var radius = (smallPoint*20) * darkness;
 
-        if(radius < 0.95) {
+        if(darkness < 0.95) {
           // p.vertex(x, y);
           // p.vertex(x, y+1);
-          p.ellipse(x, y, 4, 4);
+          p.ellipse(x, y, radius, radius);
         }
       }
       // p.endShape();
