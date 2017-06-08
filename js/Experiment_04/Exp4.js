@@ -44,7 +44,7 @@ var exp4 = function(p) {
     // p.print(leftSpace, topSpace);
     // p.translate(leftSpace, topSpace);
     for (var y = 0; y < img.height; y += smallPoint) {
-      p.beginShape(p.TRIANGLE_STRIP);
+      // p.beginShape(p.TRIANGLE_STRIP);
       for (var x = 0; x < img.width; x += smallPoint) {
         var i = y * img.width + x;
         var darkness = (255 - img.pixels[i*4]) / 255;
@@ -56,7 +56,7 @@ var exp4 = function(p) {
           p.ellipse(x, y, radius, radius);
         }
       }
-      p.endShape();
+      // p.endShape();
     }
   }
 };
