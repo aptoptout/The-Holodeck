@@ -43,16 +43,16 @@ var exp4 = function(p) {
     var topSpace = elementHeight - img.height;
     // p.print(leftSpace, topSpace);
     // p.translate(leftSpace, topSpace);
-    for (var y = 0; y < img.width; y += smallPoint) {
+    for (var y = 0; y < img.height; y += smallPoint) {
       p.beginShape(p.TRIANGLE_STRIP);
-      for (var x = 0; x < img.height; x += smallPoint) {
+      for (var x = 0; x < img.width; x += smallPoint) {
         var i = y * img.width + x;
         var darkness = (255 - img.pixels[i*4]) / 255;
         var radius = smallPoint * darkness;
 
         if(radius < 0.75) {
           p.vertex(x, y);
-          // p.vertex(x, y+1);
+          p.vertex(x, y+1);
           p.ellipse(x, y, 1, 1);
         }
       }
