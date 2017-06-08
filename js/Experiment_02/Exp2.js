@@ -50,11 +50,10 @@ var exp2 = function(p) {
   };
 
   p.draw = function() {
-    // if (p.mouseIsPressed) {
-    //   flying -= 0.025;
-    // }
+    if (p.keyIsPressed) {
+      flying -= 0.025;
+    }
 
-    // flying -= 0.005;
     var yoff = flying;
 
     for (var y = 0; y < rows; y++) {
@@ -81,18 +80,7 @@ var exp2 = function(p) {
         p.pop();
       }
     }
-  };
-
-  //
-  // INTERACTION
-  p.keyPressed = function() {
-    if (p.keyCode == p.UP_ARROW) {
-      flying -= 0.05;
-    } else if (p.keyCode == p.DOWN_ARROW) {
-      flying += 0.05;
-    }
-    return false; // prevent default
-  }
+  };  
 
 };
 
