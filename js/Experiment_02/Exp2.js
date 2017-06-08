@@ -69,7 +69,7 @@ var exp2 = function(p) {
     }
 
     p.background(0);
-    p.strokeWidth(5);
+    p.strokeWeight(5);
     p.stroke(255, 85);
     p.translate(0, 100);
 

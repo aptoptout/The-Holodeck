@@ -33,14 +33,14 @@ var exp4 = function(p) {
     smallPoint = 4;
     largePoint = 40;
 
-    p.imageMode(CENTER);
+    p.imageMode(p.CENTER);
     p.noStroke();
     p.background(255);
     img.loadPixels();
   }
 
   p.draw = function() {
-    var pointillize = p.map(mouseX, 0, elementWidth, smallPoint, largePoint);
+    var pointillize = p.map(p.mouseX, 0, elementWidth, smallPoint, largePoint);
     var x = p.floor(p.random(img.width));
     var y = p.floor(p.random(img.height));
     var pix = img.get(x, y);
