@@ -48,7 +48,7 @@ var exp4 = function(p) {
       for (var x = 0; x < img.width; x += smallPoint) {
         var i = y * img.width + x;
         var darkness = (255 - img.pixels[i*4]) / 255;
-        var radius = (smallPoint*10) * darkness;
+        var radius = (smallPoint*20) * darkness;
 
         if(radius < 0.95) {
           // p.vertex(x, y);
