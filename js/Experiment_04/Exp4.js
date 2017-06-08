@@ -32,7 +32,7 @@ var exp4 = function(p) {
     smallPoint = 10;
     largePoint = 40;
 
-    p.imageMode(p.CENTER);
+    // p.imageMode(p.CENTER);
     p.noStroke();
     p.fill(0);
   }
