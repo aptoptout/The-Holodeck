@@ -54,7 +54,7 @@ var exp2 = function(p) {
     //   flying -= 0.025;
     // }
 
-    flying -= 0.1;
+    flying -= 0.005;
     var yoff = flying;
 
     for (var y = 0; y < rows; y++) {
@@ -92,11 +92,11 @@ var exp2 = function(p) {
 
     if (e.keyCode == '38') {
       // up arrow
-      flying -= 0.1;
+      flying -= 0.025;
     }
     else if (e.keyCode == '40') {
       // down arrow
-      flying += 0.1;
+      flying += 0.025;
     }
   }
 
