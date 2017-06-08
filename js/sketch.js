@@ -73,6 +73,15 @@ function getDescription() {
             repository.innerHTML = exp3_Specs.repository.representation;
             repository.setAttribute("href", exp3_Specs.repository.link);
             break;
+        case 'exp4':
+            idTag.innerHTML = exp4_Specs.id;
+            nameTag.innerHTML = exp4_Specs.name;
+            libraryTag.innerHTML = exp4_Specs.library.representation;
+            libraryTag.setAttribute("href", exp4_Specs.library.link);
+            description.innerHTML = exp4_Specs.description;
+            repository.innerHTML = exp4_Specs.repository.representation;
+            repository.setAttribute("href", exp4_Specs.repository.link);
+            break;
         default:
             return false;
     }
@@ -102,6 +111,10 @@ function showThisExperiment(event) {
         case 'exp3':
             getDescription();
             exp3("c1");
+            break;
+        case 'exp4':
+            getDescription();
+            showThis = new p5(exp4, 'c1');
             break;
         default:
             return false;
