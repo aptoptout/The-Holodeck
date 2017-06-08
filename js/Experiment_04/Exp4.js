@@ -35,17 +35,21 @@ var exp4 = function(p) {
 
     p.imageMode(p.CENTER);
     p.noStroke();
-    p.background(255);
-    img.loadPixels();
+    p.fill(0);
   }
 
   p.draw = function() {
-    var pointillize = p.map(p.mouseX, 0, elementWidth, smallPoint, largePoint);
-    var x = p.floor(p.random(img.width));
-    var y = p.floor(p.random(img.height));
-    var pix = img.get(x, y);
-    p.fill(pix, 128);
-    p.ellipse(x, y, pointillize, pointillize);
+    p.background(255);
+    img.loadPixels();
+    var stepSize = p.round(constrain(p.mouseX / 8, 6, 32));
+    for (var y = 0; y < height; y += stepSize) {
+      for (var x = 0; x < width; x += stepSize) {
+        var i = y * elementWidth + x;
+        var darkness = (255 - img.pixels[i*4]) / 255;
+        var radius = stepSize * darkness;
+        ellipse(x, y, radius, radius);
+      }
+    }
   }
 };
 
