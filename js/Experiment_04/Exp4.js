@@ -51,7 +51,7 @@ var exp4 = function(p) {
         var radius = (smallPoint*10) * darkness;
 
         if(radius < 0.75) {
-          p.vertex(x, y);
+          // p.vertex(x, y);
           // p.vertex(x, y+1);
           p.ellipse(x, y, radius, radius);
         }
