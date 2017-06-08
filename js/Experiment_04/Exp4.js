@@ -22,14 +22,14 @@ var exp4 = function(p) {
   var img;
   var smallPoint, largePoint;
 
-  p.preload = function() {
-    img = p.loadImage("https://martijndeheer.github.io/The-Holodeck/js/Experiment_04/assets/moonwalk.jpg");
-  }
+  // p.preload = function() {
+    
+  // }
 
   p.setup = function() {
     p.createCanvas(elementWidth, elementHeight);
     smallPoint = 4;
-
+    img = p.loadImage("https://martijndeheer.github.io/The-Holodeck/js/Experiment_04/assets/moonwalk.jpg");
     // p.imageMode(p.CENTER);
     p.stroke(127);
     p.fill(255);
@@ -52,7 +52,7 @@ var exp4 = function(p) {
 
         if(radius < 0.75) {
           p.vertex(x, y);
-          p.vertex(x, y+1);
+          // p.vertex(x, y+1);
           p.ellipse(x, y, 1, 1);
         }
       }
