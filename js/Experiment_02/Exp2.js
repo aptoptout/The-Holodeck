@@ -26,17 +26,13 @@ var exp2_Specs = {
 var exp2 = function(p) {
 
   var cols, rows;
-  var scl = 30;
+  var scl = 15;
   var w = elementWidth;
   var h = elementHeight/1.2;
 
   var flying = 0;
 
   var terrain = [];
-
-  // p.preload = function() {
-    
-  // }
 
   p.setup = function() {
     p.createCanvas(elementWidth, elementHeight, p.WEBGL);
@@ -50,12 +46,13 @@ var exp2 = function(p) {
         terrain[x][y] = 0;
       }
     }
+
   };
 
   p.draw = function() {
-    if (p.mouseIsPressed) {
-      flying -= 0.025;
-    }
+    // if (p.mouseIsPressed) {
+    //   flying -= 0.025;
+    // }
 
     var yoff = flying;
 
@@ -69,22 +66,39 @@ var exp2 = function(p) {
     }
 
     p.background(0);
-    p.strokeWeight(5);
-    p.stroke(255, 85);
     p.translate(0, 100);
 
     p.rotateX(-Math.PI/3);
+    p.ambientLight(255, 255, 255);
+    p.fill(255, 255, 255, 85);
     p.translate(-w/2, -h/2);
 
     for (var y = 0; y < rows-1; y++) {
       for (var x = 0; x < cols; x++) {
         p.push();
         p.translate(0, 0, terrain[x][y]);
-        p.point(x,y);
+        p.ellipse(x*scl-2.5, y*scl-2.5, 5, 5);
         p.pop();
       }
     }
   };
+
+  //
+  // INTERACTION
+  document.onkeydown = checkKey;
+
+  function checkKey(e) {
+    e = e || window.event;
+
+    if (e.keyCode == '38') {
+      // up arrow
+      flying -= 0.025;
+    }
+    else if (e.keyCode == '40') {
+      // down arrow
+      flying += 0.025;
+    }
+  }
 
 };
 

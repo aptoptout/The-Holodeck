@@ -41,7 +41,7 @@ var exp4 = function(p) {
   p.draw = function() {
     p.background(255);
     img.loadPixels();
-    var stepSize = p.round(constrain(p.mouseX / 8, 6, 32));
+    var stepSize = p.round(p.constrain(p.mouseX / 8, 6, 32));
     for (var y = 0; y < height; y += stepSize) {
       for (var x = 0; x < width; x += stepSize) {
         var i = y * elementWidth + x;
