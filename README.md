@@ -10,7 +10,9 @@ All the experiments are [here](https://github.com/martijndeheer/The-Holodeck/tre
 - [x] Experiment with vectors and forces that react (attract and reflect) to mouse.
 - [ ] Movement through 3D space by keys and mouse.
 - [ ] Mapping [data](https://github.com/dariusk/corpora/blob/master/data/medicine/diagnoses.json) (and possibly tweets?) to an 3D object by itterating through am array containing its points (CSV?).
-- [ ] 
+- [ ] Use an image to draw objects on.
+- [ ] Image Triangulation with interaction/animation.
+- [ ] Animated DNA string with reactional behavior.
 - [ ] Automated algorithmic landscape generation.
 - [ ] Including DOM elements as part of design (a HUD).
 - [ ] Translate several sketches from processing to P5js with added interactivity.
