@@ -1,0 +1,19 @@
+{
+  "name": "The-Holodeck",
+  "version": "0.0.2",
+  "description": "Laboratory of creative coding experiments by Martijn de Heer",
+  "main": "index.js",
+  "repository": "https://github.com/aptoptout/The-Holodeck",
+  "author": "Apt Opt Out",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "nuxt": "^2.6.3",
+    "prismic-vue": "^1.3.0"
+  }
+}
